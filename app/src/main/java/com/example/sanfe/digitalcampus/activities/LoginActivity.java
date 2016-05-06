@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus;
+package com.example.sanfe.digitalcampus.activities;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+
+import com.example.sanfe.digitalcampus.logic.AlertDialogWindow;
+import com.example.sanfe.digitalcampus.R;
 
 public class LoginActivity  extends AppCompatActivity {
 

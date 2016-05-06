@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Digital Campus</string>
+    <string name="autentication">Autenticación</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="remember_me">Recuerdame la próxima vez</string>
+    <string name="enter_button">Entrar</string>
 </resources>
