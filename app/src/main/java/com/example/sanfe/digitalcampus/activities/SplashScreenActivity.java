@@ -1,9 +1,11 @@
-package com.example.sanfe.digitalcampus;
+package com.example.sanfe.digitalcampus.activities;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
+
+import com.example.sanfe.digitalcampus.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
