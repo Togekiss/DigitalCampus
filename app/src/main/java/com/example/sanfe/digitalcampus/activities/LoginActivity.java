@@ -1,6 +1,7 @@
 package com.example.sanfe.digitalcampus.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -32,22 +33,28 @@ public class LoginActivity  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (!isEmailValid(email.getText().toString())) {
-                    AlertDialogWindow.errorMessage(context, TITLE, "El formato del email no es correcto.");
+                if (password.getText().toString().length() < 6) {
+                    AlertDialogWindow.errorMessage(context, TITLE, "La contraseña debe contener 6 carácteres.");
                 }
                 else {
-                    if (!email.getText().toString().equals(EMAIL)) {
-                        AlertDialogWindow.errorMessage(context, TITLE, "El email introducido no esta registrado.");
+                    if (!isEmailValid(email.getText().toString())) {
+                        AlertDialogWindow.errorMessage(context, TITLE, "El formato del email no es correcto.");
                     }
                     else {
-                        if (!password.getText().toString().equals(PASSWORD)) {
-                            AlertDialogWindow.errorMessage(context, TITLE, "La contraseña introducida es incorrecta");
+                        if (!email.getText().toString().equals(EMAIL)) {
+                            AlertDialogWindow.errorMessage(context, TITLE, "El email introducido no esta registrado.");
                         }
-                       /* else {
-                            //activitat menú
+                        else {
+                            if (!password.getText().toString().equals(PASSWORD)) {
+                                AlertDialogWindow.errorMessage(context, TITLE, "La contraseña introducida es incorrecta");
+                            }
+                            else {
                             //fer remember_me
-                            //ficar textfield en blanc
-                        }*/
+                                Intent intent = new Intent (getApplicationContext(), MenuActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
                     }
                 }
 
