@@ -5,4 +5,9 @@
     <string name="password">Contraseña</string>
     <string name="remember_me">Recuerdame la próxima vez</string>
     <string name="enter_button">Entrar</string>
+    <string name="exit">Salir</string>
+    <string name="create_student">Crear Alumno</string>
+    <string name="create_subject">Crear Asignatura</string>
+    <string name="new_exam">Nuevo Examen</string>
+    <string name="subjectmanager_text">Selecciona una asignatura</string>
 </resources>

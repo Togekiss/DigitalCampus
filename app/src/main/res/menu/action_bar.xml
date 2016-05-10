@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android1="http://schemas.android.com/apk/res-auto"
     tools:context=".Main">
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/create_student"
         android:orderInCategory="100"
-        android:title="@string/app_name"/>
+        android:title="@string/create_student"/>
 
     <item
-        android:id="@+id/zoom_in"
-        android1:showAsAction="ifRoom"
-        android:icon="@drawable/ic_account_box_black_48dp"
-        android:title="@string/app_name"/>
+        android:id="@+id/create_subject"
+        android:orderInCategory="100"
+        android:title="@string/create_subject"/>
 
     <item
-        android:id="@+id/zoom_out"
-        android:icon="@drawable/ic_book_black_48dp"
-        android1:showAsAction="ifRoom"
-        android:title="@string/email"/>
+        android:id="@+id/new_exam"
+        android:orderInCategory="100"
+        android:title="@string/new_exam"/>
+
+    <item
+        android:id="@+id/exit"
+        android:orderInCategory="100"
+        android:title="@string/exit"/>
+
 
 </menu>
