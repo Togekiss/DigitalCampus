@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.logic.GridViewImageAdapter;
+import com.example.sanfe.digitalcampus.adapters.GridViewImageAdapter;
 
 public class MenuActivity  extends AppCompatActivity {
 

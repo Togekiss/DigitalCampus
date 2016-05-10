@@ -1,6 +1,5 @@
-package com.example.sanfe.digitalcampus.logic;
+package com.example.sanfe.digitalcampus.logic.data;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 

@@ -1,4 +1,6 @@
-package com.example.sanfe.digitalcampus.logic;
+package com.example.sanfe.digitalcampus.logic.data;
+
+import com.example.sanfe.digitalcampus.logic.data.Student;
 
 import java.util.ArrayList;
 
