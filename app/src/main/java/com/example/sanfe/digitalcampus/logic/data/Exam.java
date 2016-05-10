@@ -9,10 +9,10 @@ public class Exam {
 
     private Date examDate; //both day and hour
     private String examCareer;
-    private Subject examSubject;
+    private String examSubject;
     private String examClassroom;
 
-    public Exam(String examCareer, String examClassroom, Date examDate, Subject examSubject) {
+    public Exam(String examCareer, String examClassroom, Date examDate, String examSubject) {
         this.examCareer = examCareer;
         this.examClassroom = examClassroom;
         this.examDate = examDate;
@@ -43,11 +43,11 @@ public class Exam {
         this.examDate = examDate;
     }
 
-    public Subject getExamSubject() {
+    public String getExamSubject() {
         return examSubject;
     }
 
-    public void setExamSubject(Subject examSubject) {
+    public void setExamSubject(String examSubject) {
         this.examSubject = examSubject;
     }
 

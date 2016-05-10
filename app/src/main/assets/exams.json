@@ -1,0 +1,14 @@
+[
+  {
+    "examDate": "01/01/2017",
+    "examCareer": "Informatica",
+    "examSubject": "PAED",
+    "examClassroom": "A3"
+  },
+  {
+    "examDate": "31/03/2017",
+    "examCareer": "Telecomunicaciones",
+    "examSubject": "Electronica",
+    "examClassroom": "A2"
+  }
+]
