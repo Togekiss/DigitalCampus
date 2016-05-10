@@ -13,9 +13,9 @@ public class Student {
     private String studentCareer;
     private String  studentGender;
     private int studentImage;
-    private ArrayList<Subject> studentSubjects;
+    private ArrayList<String> studentSubjects;
 
-    public Student(Date studentBirthdate, String studentCareer, String studentGender, int studentImage, String studentName, ArrayList<Subject> studentSubjects) {
+    public Student(Date studentBirthdate, String studentCareer, String studentGender, int studentImage, String studentName, ArrayList<String> studentSubjects) {
         this.studentBirthdate = studentBirthdate;
         this.studentCareer = studentCareer;
         this.studentGender = studentGender;
@@ -64,11 +64,11 @@ public class Student {
         this.studentName = studentName;
     }
 
-    public ArrayList<Subject> getStudentSubjects() {
+    public ArrayList<String> getStudentSubjects() {
         return studentSubjects;
     }
 
-    public void setStudentSubjects(ArrayList<Subject> studentSubjects) {
+    public void setStudentSubjects(ArrayList<String> studentSubjects) {
         this.studentSubjects = studentSubjects;
     }
 
