@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="careers_array">
+        <item>Informática</item>
+        <item>Telecomunicaciones</item>
+        <item>Electrónica</item>
+        <item>Multimedia</item>
+        <item>Telemática</item>
+    </string-array>
+</resources>

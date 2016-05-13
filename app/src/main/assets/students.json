@@ -1,0 +1,57 @@
+[
+  {
+    "studentName": "Marta Zapatero",
+    "studentBirthdate": "01/03/1996",
+    "studentCareer": "Informática",
+    "studentGender": "Mujer",
+    "studentImage": 12345,
+    "studentSubjects": [
+      "PAED",
+      "Android"
+    ]
+  },
+  {
+    "studentName": "Roger Marrugat",
+    "studentBirthdate": "26/06/1996",
+    "studentCareer": "Informática",
+    "studentGender": "Hombre",
+    "studentImage": 12345,
+    "studentSubjects": [
+      "Android",
+      "DPO"
+    ]
+  },
+  {
+    "studentName": "Núria Valls",
+    "studentBirthdate": "01/12/1996",
+    "studentCareer": "Telecomunicaciones",
+    "studentGender": "Mujer",
+    "studentImage": 12345,
+    "studentSubjects": [
+      "DPO",
+      "Electrónica"
+    ]
+  },
+  {
+    "studentName": "Àlex Jordà",
+    "studentBirthdate": "27/07/1996",
+    "studentCareer": "Informática",
+    "studentGender": "Hombre",
+    "studentImage": 12345,
+    "studentSubjects": [
+      "Redes",
+      "PAED"
+    ]
+  },
+  {
+    "studentName": "Alejandra Vendrell",
+    "studentBirthdate": "10/02/1996",
+    "studentCareer": "Electrónica",
+    "studentGender": "Mujer",
+    "studentImage": 12345,
+    "studentSubjects": [
+      "Electrónica",
+      "Redes"
+    ]
+  }
+]

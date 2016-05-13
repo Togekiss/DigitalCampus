@@ -72,4 +72,8 @@ public class Student {
         this.studentSubjects = studentSubjects;
     }
 
+    public void addStudentSubject(String subject) {
+        this.studentSubjects.add(subject);
+    }
+
 }

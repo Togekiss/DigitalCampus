@@ -1,0 +1,87 @@
+[
+  {
+    "subjectTitle": "Android",
+    "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
+    "image": 12345,
+    "subjectStudents": [
+      "Marta Zapatero",
+      "Roger Marrugat"
+    ],
+    "subjectThemes": [
+      "Introducción",
+      "Actividades",
+      "Layouts",
+      "Listeners",
+      "Adapters",
+      "Fragments"
+    ]
+  },
+  {
+    "subjectTitle": "PAED",
+    "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
+    "image": 12345,
+    "subjectStudents": [
+      "Àlex Jordà",
+      "Marta Zapatero"
+    ],
+    "subjectThemes": [
+      "Introducción",
+      "Backtracking",
+      "Marcaje",
+      "Árboles",
+      "Tablas",
+      "Grafs"
+    ]
+  },
+  {
+    "subjectTitle": "DPO",
+    "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
+    "image": 12345,
+    "subjectStudents": [
+      "Roger Marrugat",
+      "Núria Valls"
+    ],
+    "subjectThemes": [
+      "Introducción",
+      "Clases",
+      "Subclases",
+      "Excepciones",
+      "SWING",
+      "Sockets"
+    ]
+  },
+  {
+    "subjectTitle": "Electrónica",
+    "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
+    "image": 12345,
+    "subjectStudents": [
+      "Núria Valls",
+      "Alejandra Vendrell"
+    ],
+    "subjectThemes": [
+      "Introducción",
+      "Resistencias",
+      "Thevenin y Norton",
+      "Bobinas y condensadores",
+      "Diodos",
+      "LEDs"
+    ]
+  },
+  {
+    "subjectTitle": "Redes",
+    "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
+    "image": 12345,
+    "subjectStudents": [
+      "Alejandra Vendrell",
+      "Àlex Jordà"
+    ],
+    "subjectThemes": [
+      "Introducción",
+      "Nivel físico",
+      "Nivel de enlace",
+      "TCP/IP",
+      "Nivel de transporte",
+      "Nivel de aplicación"
+    ]
+  }
+]
