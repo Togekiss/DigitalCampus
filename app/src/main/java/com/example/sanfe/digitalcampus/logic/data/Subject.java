@@ -4,9 +4,6 @@ import com.example.sanfe.digitalcampus.logic.data.Student;
 
 import java.util.ArrayList;
 
-/**
- * Created by Marta on 06/05/2016.
- */
 public class Subject {
 
     private String subjectTitle;
@@ -21,6 +18,12 @@ public class Subject {
         this.subjectStudents = subjectStudents;
         this.subjectThemes = subjectThemes;
         this.subjectTitle = subjectTitle;
+    }
+
+    public Subject (int subjectImage, String subjectTitle, String subjectDescription) {
+        this.subjectImage = subjectImage;
+        this.subjectTitle = subjectTitle;
+        this.subjectDescription = subjectDescription;
     }
 
     public String getSubjectDescription() {

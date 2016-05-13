@@ -10,4 +10,7 @@
     <string name="create_subject">Crear Asignatura</string>
     <string name="new_exam">Nuevo Examen</string>
     <string name="subjectmanager_text">Selecciona una asignatura</string>
+    <string name="subjectmanager_actionbar">Gestión asignaturas</string>
+    <string name="title_elimination">Confirmación de Eliminación</string>
+    <string name="text_elimination">Quieres eliminar la asignatura? </string>
 </resources>

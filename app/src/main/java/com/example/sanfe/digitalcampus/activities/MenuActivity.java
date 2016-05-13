@@ -18,7 +18,6 @@ import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.GridViewImageAdapter;
 
 public class MenuActivity  extends AppCompatActivity {
-    final static String APP_NAME = "Digital Campus";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +34,23 @@ public class MenuActivity  extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
-                    case 0: break;
-                    case 1: break;
-                    case 2: break;
-                    case 3: Intent intent = new Intent (getApplicationContext(), LoginActivity.class);
-                            startActivity(intent);
-                            finish();
-                            break;
+                    case 0:
+                        Intent intent1 = new Intent(getApplicationContext(), SubjectManagerActivity.class);
+                        startActivity(intent1);
+                        finish();
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                        break;
 
-                    default: break;
+                    default:
+                        break;
                 }
             }
         });
@@ -60,7 +67,7 @@ public class MenuActivity  extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(d);
 
-        getSupportActionBar().setTitle("  " + APP_NAME);
+        getSupportActionBar().setTitle("  " + getResources().getString(R.string.app_name));
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -82,12 +89,12 @@ public class MenuActivity  extends AppCompatActivity {
 
     }
 
-    private Bitmap resizeBitmapImageFn(Bitmap bmpSource, int maxResolution){
+    public static Bitmap resizeBitmapImageFn(Bitmap bmpSource, int maxResolution){
         int iWidth = bmpSource.getWidth();
         int iHeight = bmpSource.getHeight();
         int newWidth = iWidth ;
         int newHeight = iHeight ;
-        float rate = 0.0f;
+        float rate;
 
         if (iWidth > iHeight ) {
             if (maxResolution < iWidth ) {
