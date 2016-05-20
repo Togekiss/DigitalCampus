@@ -13,4 +13,8 @@
     <string name="subjectmanager_actionbar">Gestión asignaturas</string>
     <string name="title_elimination">Confirmación de Eliminación</string>
     <string name="text_elimination">Quieres eliminar la asignatura? </string>
+    <string name="title">Título</string>
+    <string name="description">Descripción</string>
+    <string name="createsubject_continue">Continuar ></string>
+    <string name="createsubject_back">Anterior</string>
 </resources>

@@ -9,8 +9,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import com.example.sanfe.digitalcampus.logic.AlertDialogWindow;
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.logic.data.AlertDialogWindow;
+
 
 public class LoginActivity  extends AppCompatActivity {
 

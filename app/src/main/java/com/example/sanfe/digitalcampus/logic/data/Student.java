@@ -3,9 +3,6 @@ package com.example.sanfe.digitalcampus.logic.data;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * Created by Marta on 06/05/2016.
- */
 public class Student {
 
     private String studentName;
@@ -22,6 +19,11 @@ public class Student {
         this.studentImage = studentImage;
         this.studentName = studentName;
         this.studentSubjects = studentSubjects;
+    }
+
+    public Student (int studentImage, String studentName) {
+        this.studentImage = studentImage;
+        this.studentName = studentName;
     }
 
     public Date getStudentBirthdate() {

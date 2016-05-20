@@ -10,8 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.activities.SubjectManagerActivity;
-import com.example.sanfe.digitalcampus.logic.AlertDialogWindow;
+import com.example.sanfe.digitalcampus.logic.data.AlertDialogWindow;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
 
 import java.util.ArrayList;
@@ -51,7 +50,7 @@ public class ListViewAdapter extends BaseAdapter {
 
         if (row == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = inflater.inflate(R.layout.subjectmanager_row, parent, false);
+            row = inflater.inflate(R.layout.subjectlist_row, parent, false);
             row.setClickable(true);
         }
 
