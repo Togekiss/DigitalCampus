@@ -4,8 +4,28 @@
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
     "image": 12345,
     "subjectStudents": [
-      "Marta Zapatero",
-      "Roger Marrugat"
+      {
+        "studentName": "Marta Zapatero",
+        "studentBirthdate": "1996-03-01",
+        "studentCareer": "Informática",
+        "studentGender": "Mujer",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "PAED",
+          "Android"
+        ]
+      },
+      {
+        "studentName": "Roger Marrugat",
+        "studentBirthdate": "1996-06-26",
+        "studentCareer": "Informática",
+        "studentGender": "Hombre",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "Android",
+          "DPO"
+        ]
+      }
     ],
     "subjectThemes": [
       "Introducción",
@@ -21,8 +41,28 @@
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
     "image": 12345,
     "subjectStudents": [
-      "Àlex Jordà",
-      "Marta Zapatero"
+      {
+        "studentName": "Àlex Jordà",
+        "studentBirthdate": "1996-07-27",
+        "studentCareer": "Informática",
+        "studentGender": "Hombre",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "Redes",
+          "PAED"
+        ]
+      },
+      {
+        "studentName": "Marta Zapatero",
+        "studentBirthdate": "1996-03-01",
+        "studentCareer": "Informática",
+        "studentGender": "Mujer",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "PAED",
+          "Android"
+        ]
+      }
     ],
     "subjectThemes": [
       "Introducción",
@@ -38,8 +78,28 @@
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
     "image": 12345,
     "subjectStudents": [
-      "Roger Marrugat",
-      "Núria Valls"
+      {
+        "studentName": "Roger Marrugat",
+        "studentBirthdate": "1996-06-26",
+        "studentCareer": "Informática",
+        "studentGender": "Hombre",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "Android",
+          "DPO"
+        ]
+      },
+      {
+        "studentName": "Núria Valls",
+        "studentBirthdate": "1996-12-01",
+        "studentCareer": "Telecomunicaciones",
+        "studentGender": "Mujer",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "DPO",
+          "Electrónica"
+        ]
+      }
     ],
     "subjectThemes": [
       "Introducción",
@@ -55,8 +115,28 @@
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
     "image": 12345,
     "subjectStudents": [
-      "Núria Valls",
-      "Alejandra Vendrell"
+      {
+        "studentName": "Núria Valls",
+        "studentBirthdate": "1996-12-01",
+        "studentCareer": "Telecomunicaciones",
+        "studentGender": "Mujer",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "DPO",
+          "Electrónica"
+        ]
+      },
+      {
+        "studentName": "Alejandra Vendrell",
+        "studentBirthdate": "1996-02-10",
+        "studentCareer": "Electrónica",
+        "studentGender": "Mujer",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "Electrónica",
+          "Redes"
+        ]
+      }
     ],
     "subjectThemes": [
       "Introducción",
@@ -72,8 +152,28 @@
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
     "image": 12345,
     "subjectStudents": [
-      "Alejandra Vendrell",
-      "Àlex Jordà"
+      {
+        "studentName": "Alejandra Vendrell",
+        "studentBirthdate": "1996-02-10",
+        "studentCareer": "Electrónica",
+        "studentGender": "Mujer",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "Electrónica",
+          "Redes"
+        ]
+      },
+      {
+        "studentName": "Àlex Jordà",
+        "studentBirthdate": "1996-07-27",
+        "studentCareer": "Informática",
+        "studentGender": "Hombre",
+        "studentImage": 12345,
+        "studentSubjects": [
+          "Redes",
+          "PAED"
+        ]
+      }
     ],
     "subjectThemes": [
       "Introducción",
