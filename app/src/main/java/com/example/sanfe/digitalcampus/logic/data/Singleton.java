@@ -17,6 +17,7 @@ public class Singleton {
     private ArrayList<Exam> examList;
     private ArrayList<String> classroomList;
     private ArrayList<String> careerList;
+    private User user;
 
 
     private Singleton () {
@@ -25,6 +26,7 @@ public class Singleton {
         examList = new ArrayList<Exam>();
         classroomList = new ArrayList<String>();
         careerList = new ArrayList<String>();
+        user = new User();
     }
 
     public static Singleton getInstance() {
@@ -72,6 +74,14 @@ public class Singleton {
 
     public void setSubjectList(ArrayList<Subject> subjectList) {
         this.subjectList = subjectList;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void addStudent (Student student) {

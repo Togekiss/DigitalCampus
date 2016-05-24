@@ -10,7 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.logic.data.AlertDialogWindow;
+import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
 
 public class LoginActivity  extends AppCompatActivity {
