@@ -2,14 +2,12 @@ package com.example.sanfe.digitalcampus.logic.json;
 
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.util.Log;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.logic.data.Exam;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
-import com.example.sanfe.digitalcampus.logic.data.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -41,10 +39,6 @@ public class GsonManager {
             String exams = loadJSONFromAsset(assets.open("exams.json"));
             ArrayList<Exam> examList = new ArrayList<Exam>(Arrays.asList(gson.fromJson(exams, Exam[].class)));
             Singleton.getInstance().setExamList(examList);
-
-            String userstring = loadJSONFromAsset(assets.open("user.json"));
-            User user = gson.fromJson(userstring, User.class);
-            Singleton.getInstance().setUser(user);
 
         } catch (IOException e) {}
 

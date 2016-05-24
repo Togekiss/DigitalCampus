@@ -2,7 +2,9 @@ package com.example.sanfe.digitalcampus.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +28,7 @@ public class LoginActivity  extends AppCompatActivity {
 
         final EditText email = (EditText) findViewById(R.id.field_email);
         final EditText password = (EditText) findViewById(R.id.field_password);
-        CheckBox remember_me = (CheckBox) findViewById(R.id.checkbox_remember_me);
+        final CheckBox remember_me = (CheckBox) findViewById(R.id.checkbox_remember_me);
         Button enter_button = (Button) findViewById(R.id.enter_button);
         final Context context = this;
 
@@ -50,8 +52,15 @@ public class LoginActivity  extends AppCompatActivity {
                                 AlertDialogWindow.errorMessage(context, TITLE, "La contraseña introducida es incorrecta");
                             }
                             else {
-                            //fer remember_me
-                                Intent intent = new Intent (getApplicationContext(), MenuActivity.class);
+
+                                if (remember_me.isChecked()) {
+                                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putBoolean("rememberMe",true);
+                                    editor.apply();
+                                }
+
+                                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                                 startActivity(intent);
                                 finish();
                             }
