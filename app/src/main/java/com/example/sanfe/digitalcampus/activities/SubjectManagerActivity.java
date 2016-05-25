@@ -1,5 +1,6 @@
 package com.example.sanfe.digitalcampus.activities;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -9,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.sanfe.digitalcampus.R;
@@ -21,6 +24,7 @@ public class SubjectManagerActivity extends AppCompatActivity {
     //Implementar el click d'assignatura
     //Mirar si les proporcions actionbar / resta activitat son adequades
     //Afegir appicon amb fletxeta i icon de +
+    //Preguntar si es mata aquesta activitat al accedit al create subject 1
 
     public static ArrayList<Subject> list;
     public static ListViewAdapter adapter;
@@ -42,6 +46,21 @@ public class SubjectManagerActivity extends AppCompatActivity {
         ListView listview = (ListView) findViewById(R.id.subjectmanager_list);
         adapter = new ListViewAdapter(this, list, getResources().getString(R.string.title_elimination), getResources().getString(R.string.text_elimination));
         listview.setAdapter(adapter);
+
+        listview.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+               //show subject
+               /* Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(intent);
+                finish(); */
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 
@@ -70,6 +89,9 @@ public class SubjectManagerActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.create_subject:
+                Intent intent = new Intent(getApplicationContext(), CreateSubject1Activity.class);
+                startActivity(intent);
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

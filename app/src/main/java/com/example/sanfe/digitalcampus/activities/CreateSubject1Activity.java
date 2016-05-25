@@ -29,9 +29,9 @@ public class CreateSubject1Activity extends AppCompatActivity {
             public void onClick(View v) {
                 //Fer que passi a la seguent activitat
                 //En la seguent pantalla ha de poder tornar a aquesta pero amb un boto de back especial
-                Intent intent = new Intent (getApplicationContext(), MenuActivity.class);
+                Intent intent = new Intent (getApplicationContext(), CreateSubject2Activity.class);
                 startActivity(intent);
-                finish();
+                // finish();
             }
         });
     }
