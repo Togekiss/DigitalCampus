@@ -17,4 +17,25 @@
     <string name="description">Descripción</string>
     <string name="createsubject_continue">Continuar ></string>
     <string name="createsubject_back">Anterior</string>
+    <string name="createsubject_text">Introduce el temario de la asignatura:</string>
+    <string name="subject_hint">Nombre tema...</string>
+    <string name="insert">Insertar</string>
+    <string name="info">INFORMACIÓN BÁSICA</string>
+    <string name="themes">TEMARIO</string>
+    <string name="students">ALUMNOS INSCRITOS</string>
+    <string name="name">Nombre alumno</string>
+    <string name="birth">Fecha de Nacimiento</string>
+    <string name="degree">Carrera</string>
+    <string name="gender">Sexo</string>
+    <string name="male">Masculino</string>
+    <string name="female">Femenino</string>
+    <string name="photo">Foto</string>
+    <string name="select_photo">Seleccionar Foto</string>
+    <string name="create">Crear ></string>
+    <string name="subjects">ASIGNATURAS</string>
+    <string name="date">Fecha del examen</string>
+    <string name="time">Hora del examen</string>
+    <string name="subject">Asignatura</string>
+    <string name="location">Aula</string>
+    <string name="save">Guardar</string>
 </resources>

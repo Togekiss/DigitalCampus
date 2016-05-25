@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:id="@+id/field_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/field_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="time"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/degree"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"/>
+
+    <Spinner
+        android:id="@+id/field_degree"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subject"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"/>
+
+    <Spinner
+        android:id="@+id/field_subject"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"/>
+
+    <Spinner
+        android:id="@+id/field_location"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_gravity="end"
+        android:layout_marginTop="30dp"/>
+
+</LinearLayout>

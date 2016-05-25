@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp">
+
+    <ImageView
+        android:id="@+id/studentmanager_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/app_icon"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:id="@+id/studentmanager_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/studentmanager_image"/>
+
+    <TextView
+        android:id="@+id/studentmanager_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="15sp"
+        android:layout_toRightOf="@id/studentmanager_image"
+        android:layout_below="@id/studentmanager_name"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/studentmanager_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="15sp"
+        android:layout_toRightOf="@id/studentmanager_image"
+        android:layout_below="@id/studentmanager_age"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+    <Button
+        android:id="@+id/studentmanager_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"/>
+
+</RelativeLayout>

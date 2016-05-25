@@ -9,8 +9,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="@string/subjectmanager_text"
-        android:textSize="25sp"
+        android:text="@string/createsubject_text"
+        android:textSize="20sp"
         android:layout_marginTop="10dp"
         android:layout_weight="1"/>
 
@@ -18,26 +18,38 @@
         android:id="@+id/createsubject2_list"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="8">
+        android:layout_weight="7">
 
     </ListView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/subject_hint"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/insert"
+        android:layout_gravity="end"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="2">
 
         <Button
             android:id="@+id/createsubject2_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/createsubject_back"/>
+            android:text="@string/createsubject_back"
+            android:layout_alignParentBottom="true"/>
 
         <Button
             android:id="@+id/createsubject2_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:text="@string/createsubject_continue"/>
 
     </RelativeLayout>
