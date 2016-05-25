@@ -36,12 +36,12 @@ public class LoginActivity  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (password.getText().toString().length() < 6) {
-                    AlertDialogWindow.errorMessage(context, TITLE, "La contraseña debe contener 6 carácteres.");
+                if (!isEmailValid(email.getText().toString())) {
+                    AlertDialogWindow.errorMessage(context, TITLE, "El formato del email no es correcto.");
                 }
                 else {
-                    if (!isEmailValid(email.getText().toString())) {
-                        AlertDialogWindow.errorMessage(context, TITLE, "El formato del email no es correcto.");
+                    if (password.getText().toString().length() < 6) {
+                        AlertDialogWindow.errorMessage(context, TITLE, "La contraseña debe contener 6 carácteres.");
                     }
                     else {
                         if (!email.getText().toString().equals(EMAIL)) {
@@ -52,7 +52,6 @@ public class LoginActivity  extends AppCompatActivity {
                                 AlertDialogWindow.errorMessage(context, TITLE, "La contraseña introducida es incorrecta");
                             }
                             else {
-
                                 if (remember_me.isChecked()) {
                                     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                                     SharedPreferences.Editor editor = preferences.edit();
@@ -67,7 +66,6 @@ public class LoginActivity  extends AppCompatActivity {
                         }
                     }
                 }
-
             }
         });
     }
