@@ -1,6 +1,9 @@
 package com.example.sanfe.digitalcampus.logic.data;
 
+import android.content.res.Resources;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Marta on 17/05/2016.
@@ -14,7 +17,6 @@ public class Singleton {
     private ArrayList<Exam> examList;
     private ArrayList<String> classroomList;
     private ArrayList<String> careerList;
-
 
     private Singleton () {
         studentList = new ArrayList<Student>();

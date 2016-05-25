@@ -1,12 +1,12 @@
 [
   {
-    "examDate": "01/01/2017 11:00:00",
+    "examDate": "2017-01-01T11:00:00+0100",
     "examCareer": "Informática",
     "examSubject": "PAED",
     "examClassroom": "A3"
   },
   {
-    "examDate": "31/03/2017 18:30:00",
+    "examDate": "2016-06-30T18:30:00+0100",
     "examCareer": "Telecomunicaciones",
     "examSubject": "Electrónica",
     "examClassroom": "A2"

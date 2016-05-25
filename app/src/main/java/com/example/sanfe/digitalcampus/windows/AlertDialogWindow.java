@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.logic.data;
+package com.example.sanfe.digitalcampus.windows;
 
 import android.content.Context;
 import android.content.DialogInterface;
