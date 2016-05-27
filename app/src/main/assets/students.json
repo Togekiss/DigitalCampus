@@ -12,7 +12,7 @@
   },
   {
     "studentName": "Roger Marrugat",
-    "studentBirthdate": "1996-06-26",
+    "studentBirthdate": "1996-06-27",
     "studentCareer": "Informática",
     "studentGender": "Hombre",
     "studentImage": 12345,
@@ -23,7 +23,7 @@
   },
   {
     "studentName": "Núria Valls",
-    "studentBirthdate": "1996-12-01",
+    "studentBirthdate": "1996-12-15",
     "studentCareer": "Telecomunicaciones",
     "studentGender": "Mujer",
     "studentImage": 12345,
@@ -34,7 +34,7 @@
   },
   {
     "studentName": "Àlex Jordà",
-    "studentBirthdate": "1996-07-27",
+    "studentBirthdate": "1996-07-25",
     "studentCareer": "Informática",
     "studentGender": "Hombre",
     "studentImage": 12345,

@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
+import com.example.sanfe.digitalcampus.logic.data.Singleton;
 
 import java.util.ArrayList;
 
@@ -60,6 +60,8 @@ public class CreateSubject3Activity extends AppCompatActivity {
                 // Intent intent = new Intent (getApplicationContext(), CreateSubject3Activity.class);
                 // startActivity(intent);
                 // finish();
+                //Afegir list a la classe subject
+               // Singleton.getInstance().addSubject(subject);
             }
         });
 
