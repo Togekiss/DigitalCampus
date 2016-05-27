@@ -20,6 +20,11 @@ public class Subject {
         this.subjectTitle = subjectTitle;
     }
 
+    public Subject (String subjectTitle, String subjectDescription) {
+        this.subjectTitle = subjectTitle;
+        this.subjectDescription = subjectDescription;
+    }
+
     public Subject (int subjectImage, String subjectTitle, String subjectDescription) {
         this.subjectImage = subjectImage;
         this.subjectTitle = subjectTitle;

@@ -15,33 +15,27 @@ import com.example.sanfe.digitalcampus.logic.data.Student;
 import java.util.ArrayList;
 
 public class CreateSubject2Activity extends AppCompatActivity {
-    public static ArrayList<Student> list;
-    public static ListViewAdapter adapter;
+    private ListViewAdapter adapter;
+    private ArrayList<Student> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createsubject2);
 
-        list = new ArrayList<>();
-        Student student1 = new Student(R.mipmap.app_icon, "Marta");
-        Student student2 = new Student(R.mipmap.app_icon, "Mònica");
-
-        list.add(student1);
-        list.add(student2);
-
         ListView listview = (ListView) findViewById(R.id.createsubject2_list);
         Button next = (Button) findViewById(R.id.createsubject2_next);
         Button back = (Button) findViewById(R.id.createsubject2_back);
+        list = new ArrayList<>();
 
         back.setText("< Anterior");
-        //adapter = new ListViewAdapter(this, list, getResources().getString(R.string.title_elimination), getResources().getString(R.string.text_elimination));
+        //adapter = new ListViewAdapter(this,  Singleton.getInstance().getStudentList(), getResources().getString(R.string.title_elimination), getResources().getString(R.string.text_elimination));
         //listview.setAdapter(adapter);
 
         listview.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //guardar els usuaris seleccionats
+                //Afegir o desafegir a la list els alumnes
             }
 
             @Override
