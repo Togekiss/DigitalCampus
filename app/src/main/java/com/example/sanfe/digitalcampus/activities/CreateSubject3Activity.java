@@ -1,6 +1,7 @@
 package com.example.sanfe.digitalcampus.activities;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ListView;
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
+import com.example.sanfe.digitalcampus.logic.data.Subject;
 
 import java.util.ArrayList;
 
@@ -22,12 +24,17 @@ public class CreateSubject3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createsubject3);
 
+        Intent intent = getIntent();
+        final Bundle bundle = intent.getExtras();
+
         list = new ArrayList<>();
         String tema1 = "Introducción";
         String tema2 = "Distribuciones discretas";
 
         list.add(tema1);
         list.add(tema2);
+
+
 
 
         ListView listview = (ListView) findViewById(R.id.createsubject3_list);
@@ -57,11 +64,18 @@ public class CreateSubject3Activity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Intent intent = new Intent (getApplicationContext(), CreateSubject3Activity.class);
-                // startActivity(intent);
-                // finish();
-                //Afegir list a la classe subject
-               // Singleton.getInstance().addSubject(subject);
+                Subject subject = new Subject();
+
+                if (bundle != null) {
+                    subject = (Subject) bundle.get("SUBJECT");
+                    subject.setSubjectThemes(list);
+                }
+
+                Singleton.getInstance().addSubject(subject);
+                Intent intent = new Intent (getApplicationContext(), SubjectManagerActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 

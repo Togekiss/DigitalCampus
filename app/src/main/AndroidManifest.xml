@@ -29,6 +29,15 @@
         <activity
             android:name=".activities.SubjectManagerActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.CreateSubject1Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.CreateSubject2Activity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.CreateSubject3Activity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

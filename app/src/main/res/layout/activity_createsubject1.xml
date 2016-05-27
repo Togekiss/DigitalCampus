@@ -6,30 +6,19 @@
     android:padding="16dp"
     android:weightSum="10">
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/createsubject1_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/createsubject1_titlefield"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3">
-
-        <TextView
-            android:id="@+id/createsubject1_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textSize="25sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
-
-        <EditText
-            android:id="@+id/createsubject1_titlefield"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/createsubject1_title"
-            android:layout_marginTop="20dp"/>
-
-    </RelativeLayout>
-
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/createsubject1_description"
@@ -37,35 +26,22 @@
         android:layout_height="wrap_content"
         android:text="@string/description"
         android:textSize="25sp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="40dp"/>
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/createsubject1_descriptionfield"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5">
+        android:layout_weight="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"/>
 
-        <EditText
-            android:id="@+id/createsubject1_descriptionfield"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"/>
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2">
-
-        <Button
-            android:id="@+id/createsubject1_nextbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/createsubject_continue"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="20dp"/>
-
-    </RelativeLayout>
+    <Button
+        android:id="@+id/createsubject1_nextbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/createsubject_continue"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="end"/>
 
 </LinearLayout>

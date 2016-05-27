@@ -12,9 +12,12 @@ import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
 
+import java.io.Serializable;
+
 public class CreateSubject1Activity extends AppCompatActivity {
 //Controlar que 2 assignatures no es diguin igual
 //Falta ActionBar i Hints
+    //Max caràcters de descripció?
     private Subject subject;
 
     @Override
@@ -33,8 +36,9 @@ public class CreateSubject1Activity extends AppCompatActivity {
                 //En la seguent pantalla ha de poder tornar a aquesta pero amb un boto de back especial
                 subject = new Subject (title.getText().toString(), description.getText().toString());
                 Intent intent = new Intent (getApplicationContext(), CreateSubject2Activity.class);
+                intent.putExtra("SUBJECT", subject);
                 startActivity(intent);
-                // finish();
+                finish();
             }
         });
     }

@@ -2,15 +2,19 @@ package com.example.sanfe.digitalcampus.logic.data;
 
 import com.example.sanfe.digitalcampus.logic.data.Student;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Subject {
+public class Subject implements Serializable{
+
 
     private String subjectTitle;
     private String subjectDescription;
     private int subjectImage;
     private ArrayList<Student> subjectStudents;
     private ArrayList<String> subjectThemes;
+
+    public Subject () {}
 
     public Subject(String subjectDescription, int subjectImage, ArrayList<Student> subjectStudents, ArrayList<String> subjectThemes, String subjectTitle) {
         this.subjectDescription = subjectDescription;

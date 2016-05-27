@@ -10,32 +10,42 @@ import android.widget.ListView;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
+import com.example.sanfe.digitalcampus.adapters.StudentListAdapter;
+import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
+import com.example.sanfe.digitalcampus.logic.data.Subject;
 
 import java.util.ArrayList;
-
+// El nom de l'alumne trepitja la imatge
+// No permet clicar el checkbox clicant la row
 public class CreateSubject2Activity extends AppCompatActivity {
-    private ListViewAdapter adapter;
+    private StudentListAdapter adapter;
     private ArrayList<Student> list;
+    public static boolean[] checkboxlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createsubject2);
 
+        Intent intent = getIntent();
+        final Bundle bundle = intent.getExtras();
+
         ListView listview = (ListView) findViewById(R.id.createsubject2_list);
         Button next = (Button) findViewById(R.id.createsubject2_next);
         Button back = (Button) findViewById(R.id.createsubject2_back);
-        list = new ArrayList<>();
+
+        list = Singleton.getInstance().getStudentList();
+        checkboxlist = new boolean[list.size()];
 
         back.setText("< Anterior");
-        //adapter = new ListViewAdapter(this,  Singleton.getInstance().getStudentList(), getResources().getString(R.string.title_elimination), getResources().getString(R.string.text_elimination));
-        //listview.setAdapter(adapter);
+        adapter = new StudentListAdapter(this, list);
+        listview.setAdapter(adapter);
 
         listview.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Afegir o desafegir a la list els alumnes
+                checkboxlist[position] = !checkboxlist[position];
             }
 
             @Override
@@ -54,9 +64,21 @@ public class CreateSubject2Activity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent (getApplicationContext(), CreateSubject3Activity.class);
-               // startActivity(intent);
-                // finish();
+                Subject subject = new Subject();
+                ArrayList<Student> students = new ArrayList<>();
+
+                for (int i = 0; i < checkboxlist.length; i++) {
+                    if (checkboxlist[i]) students.add(list.get(i));
+                }
+
+                if (bundle != null) {
+                    subject = (Subject) bundle.get("SUBJECT");
+                    subject.setSubjectStudents(students);
+                }
+                Intent intent = new Intent (getApplicationContext(), CreateSubject3Activity.class);
+                intent.putExtra("SUBJECT", subject);
+                startActivity(intent);
+                finish();
             }
         });
     }

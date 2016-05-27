@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -56,10 +55,18 @@ public class StudentListAdapter extends BaseAdapter {
 
         ImageView image = (ImageView) row.findViewById(R.id.studentslist_image);
         TextView name = (TextView) row.findViewById(R.id.studentslist_name);
-        //CheckBox checkbox = (CheckBox) row.findViewById(R.id.studentslist_checkbox);
+        final CheckBox checkbox = (CheckBox) row.findViewById(R.id.studentslist_checkbox);
 
-        image.setImageResource(student.getStudentImage());
+        image.setImageResource(R.mipmap.app_icon);
         name.setText(student.getStudentName());
+
+        row.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!checkbox.isChecked()) checkbox.setChecked(true);
+                else checkbox.setChecked(false);
+            }
+        });
 
         return row;
     }
