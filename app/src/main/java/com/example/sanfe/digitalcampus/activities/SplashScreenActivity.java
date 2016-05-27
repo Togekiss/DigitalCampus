@@ -63,6 +63,9 @@ public class SplashScreenActivity extends AppCompatActivity {
                     });
                 }
 
+                //mirar demenar permisos de la galeria de fotos
+                //marshmallow t'obliga a fer-ho
+
                 if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("rememberMe", true)) {
                     Intent intent = new Intent (getApplicationContext(), MenuActivity.class);
                     startActivity(intent);
