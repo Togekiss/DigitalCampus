@@ -65,6 +65,9 @@ public class GsonManager {
         return json;
     }
 
+    public static void updateSubjectsJSON() {
+
+    }
 
 
 }

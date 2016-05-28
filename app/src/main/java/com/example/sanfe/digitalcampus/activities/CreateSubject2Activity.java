@@ -3,6 +3,7 @@ package com.example.sanfe.digitalcampus.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -46,8 +47,9 @@ public class CreateSubject2Activity extends AppCompatActivity {
         }
 
         back.setText("< Anterior");
-        adapter = new StudentListAdapter(this, list);
+        adapter = new StudentListAdapter(getApplicationContext(), list);
         listview.setAdapter(adapter);
+        Log.d("students", "adapter has been set");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +70,14 @@ public class CreateSubject2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Subject subject = new Subject();
                 ArrayList<Student> students = new ArrayList<>();
-
+                Log.d("students", "starting to check checkboxes");
+                Log.d("students", checkboxlist.length + "");
                 for (int i = 0; i < checkboxlist.length; i++) {
-                    if (checkboxlist[i]) students.add(list.get(i));
+                    Log.d("students", "student: " + list.get(i).getStudentName());
+                    if (checkboxlist[i]) {
+                        students.add(list.get(i));
+                        Log.d("students", "is selected");
+                    }
                 }
 
                 if (bundle != null) {
