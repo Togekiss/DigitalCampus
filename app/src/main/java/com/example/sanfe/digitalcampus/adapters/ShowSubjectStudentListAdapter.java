@@ -16,12 +16,12 @@ import com.example.sanfe.digitalcampus.logic.data.Student;
 
 import java.util.ArrayList;
 
-public class StudentListAdapter extends BaseAdapter {
+public class ShowSubjectStudentListAdapter extends BaseAdapter {
 
     private Context context;
     private ArrayList<Student> list;
 
-    public StudentListAdapter (Context context, ArrayList<Student> list) {
+    public ShowSubjectStudentListAdapter (Context context, ArrayList<Student> list) {
         this.context = context;
         this.list = list;
     }
@@ -47,37 +47,25 @@ public class StudentListAdapter extends BaseAdapter {
 
         if (row == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = inflater.inflate(R.layout.studentslist_row, parent, false);
+            row = inflater.inflate(R.layout.studentshow_row, parent, false);
+            row.setClickable(true);
         }
 
         Student student = (Student) getItem(position);
         row.setTag(student);
 
-        ImageView image = (ImageView) row.findViewById(R.id.studentslist_image);
-        TextView name = (TextView) row.findViewById(R.id.studentslist_name);
-        final CheckBox checkbox = (CheckBox) row.findViewById(R.id.studentslist_checkbox);
+        ImageView image = (ImageView) row.findViewById(R.id.studentsshow_image);
+        TextView name = (TextView) row.findViewById(R.id.studentsshow_name);
+        TextView degree = (TextView) row.findViewById(R.id.studentsshow_class);
 
         image.setImageResource(R.mipmap.app_icon);
         name.setText(student.getStudentName());
+        degree.setText(student.getStudentCareer());
 
-        try {
-            if (!CreateSubject2Activity.subject.getSubjectStudents().isEmpty()) {
-                if (CreateSubject2Activity.subject.getSubjectStudents().contains(student)) {
-                    checkbox.setChecked(true);
-                }
-            }
-        }catch (NullPointerException e) {}
-
-       row.setOnClickListener(new View.OnClickListener() {
+        row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!checkbox.isChecked()) {
-                 checkbox.setChecked(true);
-                }
-                else {
-                 checkbox.setChecked(false);
-                }
-                CreateSubject2Activity.checkboxlist[position] = !CreateSubject2Activity.checkboxlist[position];
+                //Visualitzar alumne
             }
         });
 

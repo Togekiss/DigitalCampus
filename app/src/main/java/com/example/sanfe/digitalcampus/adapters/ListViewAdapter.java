@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
@@ -51,7 +52,6 @@ public class ListViewAdapter extends BaseAdapter {
         if (row == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(R.layout.subjectlist_row, parent, false);
-            row.setClickable(true);
         }
 
         Subject subject = (Subject) getItem(position);
@@ -65,6 +65,7 @@ public class ListViewAdapter extends BaseAdapter {
         image.setImageResource(subject.getSubjectImage());
         title.setText(subject.getSubjectTitle());
         description.setText(subject.getSubjectDescription());
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -10,113 +10,105 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textSize="25sp"/>
 
-            <TextView
+        <EditText
+            android:id="@+id/field_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/birth"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/field_birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/degree"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <RadioButton
+                android:id="@+id/radiobutton_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/name"
+                android:text="@string/male"
                 android:textSize="25sp"/>
 
-            <EditText
-                android:id="@+id/field_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"/>
-
-            <TextView
+            <RadioButton
+                android:id="@+id/radiobutton_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/birth"
+                android:text="@string/female"
                 android:textSize="25sp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="10dp"/>
 
-            <EditText
-                android:id="@+id/field_birth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="date"/>
+        </RadioGroup>
 
-            <TextView
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/photo"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/createstudent_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/degree"
-                android:textSize="25sp"
-                android:layout_marginTop="20dp"/>
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/gender"
-                android:textSize="25sp"
-                android:layout_marginTop="20dp"/>
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
-
-                <RadioButton
-                    android:id="@+id/radiobutton_male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/male"
-                    android:textSize="25sp"/>
-
-                <RadioButton
-                    android:id="@+id/radiobutton_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/female"
-                    android:textSize="25sp"
-                    android:layout_marginTop="10dp"/>
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/photo"
-                android:textSize="25sp"
-                android:layout_marginTop="20dp"/>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:id="@+id/createstudent_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/app_icon"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/select_photo"
-                    android:layout_toRightOf="@id/createstudent_image"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"/>
-
-            </RelativeLayout>
+                android:src="@mipmap/app_icon"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/create"
-                android:layout_gravity="end|bottom"
-                android:layout_marginTop="20dp"/>
+                android:text="@string/select_photo"
+                android:layout_toRightOf="@id/createstudent_image"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"/>
 
-        </LinearLayout>
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create"
+            android:layout_gravity="end|bottom"
+            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
 

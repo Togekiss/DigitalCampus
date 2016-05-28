@@ -14,7 +14,12 @@ public class Subject implements Serializable{
     private ArrayList<Student> subjectStudents;
     private ArrayList<String> subjectThemes;
 
-    public Subject () {}
+    public Subject () {
+        subjectTitle = new String();
+        subjectDescription = new String();
+        subjectStudents = new ArrayList<>();
+        subjectThemes = new ArrayList<>();
+    }
 
     public Subject(String subjectDescription, int subjectImage, ArrayList<Student> subjectStudents, ArrayList<String> subjectThemes, String subjectTitle) {
         this.subjectDescription = subjectDescription;

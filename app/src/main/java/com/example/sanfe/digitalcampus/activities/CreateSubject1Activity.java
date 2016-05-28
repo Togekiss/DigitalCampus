@@ -25,21 +25,35 @@ public class CreateSubject1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createsubject1);
 
+        Intent intent = getIntent();
+        final Bundle bundle = intent.getExtras();
+
         final EditText title = (EditText) findViewById(R.id.createsubject1_titlefield);
         final EditText description = (EditText) findViewById(R.id.createsubject1_descriptionfield);
         Button continue_button = (Button) findViewById(R.id.createsubject1_nextbutton);
 
+        if (bundle != null) {
+            subject = (Subject) bundle.get("SUBJECT2");
+            try {
+                title.setText(subject.getSubjectTitle());
+                description.setText(subject.getSubjectDescription());
+            }catch(Exception e){}
+        }
+
         continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Fer que passi a la seguent activitat
-                //En la seguent pantalla ha de poder tornar a aquesta pero amb un boto de back especial
                 subject = new Subject (title.getText().toString(), description.getText().toString());
                 Intent intent = new Intent (getApplicationContext(), CreateSubject2Activity.class);
-                intent.putExtra("SUBJECT", subject);
+                intent.putExtra("SUBJECT1", subject);
                 startActivity(intent);
                 finish();
             }
         });
+    }
+
+    public void onBackPressed() {
+        this.startActivity(new Intent(CreateSubject1Activity.this, SubjectManagerActivity.class));
+        finish();
     }
 }

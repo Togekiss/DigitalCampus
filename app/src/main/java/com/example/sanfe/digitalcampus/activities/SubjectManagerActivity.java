@@ -1,5 +1,6 @@
 package com.example.sanfe.digitalcampus.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,9 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
+import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
 
 import java.util.ArrayList;
@@ -24,49 +27,44 @@ public class SubjectManagerActivity extends AppCompatActivity {
     //Implementar el click d'assignatura
     //Mirar si les proporcions actionbar / resta activitat son adequades
     //Afegir appicon amb fletxeta i icon de +
-    //Preguntar si es mata aquesta activitat al accedit al create subject 1
+   //Canviar el JSON per a que apareguin imatges de les assignatures
+    //El clic no esta a tota la vista
+    //Canviar el show layout per que es faci mes ampli
 
     public static ArrayList<Subject> list;
     public static ListViewAdapter adapter;
-
+    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjectmanager);
+        context = this;
 
-        list = new ArrayList<>();
-        Subject subject1 = new Subject(R.mipmap.app_icon, "Matemáticas", "Impartida por Javier Sevillano, resulta una " +
-                "de las asignaturas más complejas en cualquier ingeniería.");
-        Subject subject2 = new Subject(R.mipmap.app_icon, "Física", "adeu");
-
-        list.add(subject1);
-        list.add(subject2);
+        list = Singleton.getInstance().getSubjectList();
 
         ListView listview = (ListView) findViewById(R.id.subjectmanager_list);
+
+
         adapter = new ListViewAdapter(this, list, getResources().getString(R.string.title_elimination), getResources().getString(R.string.text_elimination));
         listview.setAdapter(adapter);
 
-        listview.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        listview.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               //show subject
-               /* Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent (getApplicationContext(), ShowSubjectActivity.class);
+                intent.putExtra("SUBJECT", list.get(position));
                 startActivity(intent);
-                finish(); */
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+                finish();
             }
         });
-
     }
 
     public static void eliminaAsignatura(int position) {
         list.remove(position);
         adapter.notifyDataSetChanged();
+        Singleton.getInstance().setSubjectList(list);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -96,7 +94,5 @@ public class SubjectManagerActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
-
     }
 }

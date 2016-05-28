@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
@@ -16,12 +17,12 @@ import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
 
 import java.util.ArrayList;
-// El nom de l'alumne trepitja la imatge
-// No permet clicar el checkbox clicant la row
+//Fer que es quedi clicat i revisar si els alumnes es passen correctament
 public class CreateSubject2Activity extends AppCompatActivity {
     private StudentListAdapter adapter;
     private ArrayList<Student> list;
     public static boolean[] checkboxlist;
+    public static Subject subject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,25 +39,26 @@ public class CreateSubject2Activity extends AppCompatActivity {
         list = Singleton.getInstance().getStudentList();
         checkboxlist = new boolean[list.size()];
 
+        subject = new Subject();
+
+        if (bundle != null) {
+            subject = (Subject) bundle.get("SUBJECT3");
+        }
+
         back.setText("< Anterior");
         adapter = new StudentListAdapter(this, list);
         listview.setAdapter(adapter);
 
-        listview.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                checkboxlist[position] = !checkboxlist[position];
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Subject subject = new Subject();
+                if (bundle != null) {
+                    subject = (Subject) bundle.get("SUBJECT1");
+                }
+                Intent intent = new Intent (getApplicationContext(), CreateSubject1Activity.class);
+                intent.putExtra("SUBJECT2", subject);
+                startActivity(intent);
                 finish();
             }
         });
@@ -72,14 +74,21 @@ public class CreateSubject2Activity extends AppCompatActivity {
                 }
 
                 if (bundle != null) {
-                    subject = (Subject) bundle.get("SUBJECT");
-                    subject.setSubjectStudents(students);
+                    subject = (Subject) bundle.get("SUBJECT1");
+                   try {
+                       subject.setSubjectStudents(students);
+                   }catch (Exception e){}
                 }
                 Intent intent = new Intent (getApplicationContext(), CreateSubject3Activity.class);
-                intent.putExtra("SUBJECT", subject);
+                intent.putExtra("SUBJECT2", subject);
                 startActivity(intent);
                 finish();
             }
         });
+    }
+
+    public void onBackPressed() {
+        this.startActivity(new Intent(CreateSubject2Activity.this, SubjectManagerActivity.class));
+        finish();
     }
 }

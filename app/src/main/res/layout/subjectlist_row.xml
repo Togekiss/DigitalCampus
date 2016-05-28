@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="16dp"
-    android:paddingLeft="16dp"
+    android:paddingLeft="5dp"
     android:paddingRight="5dp"
     android:paddingBottom="5dp">
 
@@ -13,10 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/app_icon"
-        android:layout_marginRight="5dp"/>
+        android:layout_marginRight="10dp"/>
 
     <RelativeLayout
-        android:id="@+id/subjectmanager_textLayout"
+        android:id="@+id/subjectmanager_textlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/subjectmanager_image">
@@ -24,11 +24,13 @@
 
         <TextView
             android:id="@+id/subjectmanager_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:text="@string/app_name"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"/>
 
         <TextView
             android:id="@+id/subjectmanager_text"
@@ -36,20 +38,22 @@
             android:layout_height="40dp"
             android:text="@string/app_name"
             android:textSize="15sp"
-            android:layout_below="@id/subjectmanager_title"
             android:maxLines="2"
-            android:ellipsize="end" />
+            android:ellipsize="end"
+            android:layout_below="@id/subjectmanager_title"/>
+
+        <Button
+            android:id="@+id/subjectmanager_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/subjectmanager_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minWidth="20dp"
-        android:text="D"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/subjectmanager_textLayout"/>
+
 
 </RelativeLayout>

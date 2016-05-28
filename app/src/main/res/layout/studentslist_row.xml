@@ -3,7 +3,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:paddingTop="16dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp">
 
     <ImageView
         android:id="@+id/studentslist_image"
@@ -13,13 +16,12 @@
 
     <TextView
         android:id="@+id/studentslist_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
         android:text="@string/app_name"
         android:textSize="25sp"
         android:layout_toRightOf="@id/studentslist_image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"/>
+        android:gravity="center" />
 
     <CheckBox
         android:id="@+id/studentslist_checkbox"

@@ -1,9 +1,10 @@
 package com.example.sanfe.digitalcampus.logic.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Student {
+public class Student implements Serializable{
 
     private String studentName;
     private Date studentBirthdate;

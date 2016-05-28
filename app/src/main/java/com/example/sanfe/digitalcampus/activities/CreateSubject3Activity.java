@@ -10,15 +10,17 @@ import android.widget.EditText;
 import android.widget.ListView;
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
+import com.example.sanfe.digitalcampus.adapters.ThemesListAdapter;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
 
 import java.util.ArrayList;
 
 public class CreateSubject3Activity extends AppCompatActivity {
-    public static ArrayList<String> list;
-    public static ListViewAdapter adapter;
-
+    private ArrayList<String> list;
+    private ThemesListAdapter adapter;
+//Per temes d'usabilitat considerar sempre mostrar l'ultim afegit
+    //Control·lar noms de temes massa llargs
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,14 +30,6 @@ public class CreateSubject3Activity extends AppCompatActivity {
         final Bundle bundle = intent.getExtras();
 
         list = new ArrayList<>();
-        String tema1 = "Introducción";
-        String tema2 = "Distribuciones discretas";
-
-        list.add(tema1);
-        list.add(tema2);
-
-
-
 
         ListView listview = (ListView) findViewById(R.id.createsubject3_list);
         final EditText textfield = (EditText) findViewById(R.id.createsubject3_subject);
@@ -44,19 +38,28 @@ public class CreateSubject3Activity extends AppCompatActivity {
         Button back = (Button) findViewById(R.id.createsubject3_back);
 
         back.setText("< Anterior");
-        //adapter = new ListViewAdapter(this, list, getResources().getString(R.string.title_elimination), getResources().getString(R.string.text_elimination));
-        //listview.setAdapter(adapter);
+        adapter = new ThemesListAdapter(this, list);
+        listview.setAdapter(adapter);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 list.add(textfield.getText().toString());
+                textfield.setText("");
+                adapter.notifyDataSetChanged();
             }
         });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Subject subject = new Subject();
+                if (bundle != null) {
+                    subject = (Subject) bundle.get("SUBJECT2");
+                }
+                Intent intent = new Intent (getApplicationContext(), CreateSubject2Activity.class);
+                intent.putExtra("SUBJECT3", subject);
+                startActivity(intent);
                 finish();
             }
         });
@@ -67,17 +70,21 @@ public class CreateSubject3Activity extends AppCompatActivity {
                 Subject subject = new Subject();
 
                 if (bundle != null) {
-                    subject = (Subject) bundle.get("SUBJECT");
+                    subject = (Subject) bundle.get("SUBJECT2");
                     subject.setSubjectThemes(list);
                 }
 
                 Singleton.getInstance().addSubject(subject);
-                Intent intent = new Intent (getApplicationContext(), SubjectManagerActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SubjectManagerActivity.class);
                 startActivity(intent);
                 finish();
-
             }
         });
 
+    }
+
+    public void onBackPressed() {
+        this.startActivity(new Intent(CreateSubject3Activity.this, SubjectManagerActivity.class));
+        finish();
     }
 }
