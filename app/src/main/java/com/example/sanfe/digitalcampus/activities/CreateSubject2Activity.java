@@ -42,7 +42,7 @@ public class CreateSubject2Activity extends AppCompatActivity {
         subject = new Subject();
 
         if (bundle != null) {
-            subject = (Subject) bundle.get("SUBJECT3");
+            subject = (Subject) bundle.get("SUBJECT1");
         }
 
         back.setText("< Anterior");

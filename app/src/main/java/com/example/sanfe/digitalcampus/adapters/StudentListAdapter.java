@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.activities.CreateSubject2Activity;
@@ -62,8 +63,12 @@ public class StudentListAdapter extends BaseAdapter {
 
         try {
             if (!CreateSubject2Activity.subject.getSubjectStudents().isEmpty()) {
-                if (CreateSubject2Activity.subject.getSubjectStudents().contains(student)) {
-                    checkbox.setChecked(true);
+                for (Student a : CreateSubject2Activity.subject.getSubjectStudents()) {
+                    if (a.getStudentName().equals(student.getStudentName()) && a.getStudentImage() == student.getStudentImage()
+                            && a.getStudentBirthdate().equals(student.getStudentBirthdate())) {
+                        checkbox.setChecked(true);
+                        CreateSubject2Activity.checkboxlist[position] = true;
+                    }
                 }
             }
         }catch (NullPointerException e) {}

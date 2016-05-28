@@ -58,7 +58,7 @@ public class CreateSubject3Activity extends AppCompatActivity {
                     subject = (Subject) bundle.get("SUBJECT2");
                 }
                 Intent intent = new Intent (getApplicationContext(), CreateSubject2Activity.class);
-                intent.putExtra("SUBJECT3", subject);
+                intent.putExtra("SUBJECT1", subject);
                 startActivity(intent);
                 finish();
             }
