@@ -17,7 +17,7 @@
             android:textSize="25sp"/>
 
         <EditText
-            android:id="@+id/field_name"
+            android:id="@+id/createstudent_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"/>
@@ -30,7 +30,7 @@
             android:layout_marginTop="20dp"/>
 
         <EditText
-            android:id="@+id/field_birth"
+            android:id="@+id/createstudent_birth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"/>
@@ -43,6 +43,7 @@
             android:layout_marginTop="20dp"/>
 
         <Spinner
+            android:id="@+id/createstudent_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -59,14 +60,14 @@
             android:layout_marginTop="20dp">
 
             <RadioButton
-                android:id="@+id/radiobutton_male"
+                android:id="@+id/createstudent_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/male"
                 android:textSize="25sp"/>
 
             <RadioButton
-                android:id="@+id/radiobutton_female"
+                android:id="@+id/createstudent_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/female"
@@ -94,6 +95,7 @@
                 android:src="@mipmap/app_icon"/>
 
             <Button
+                android:id="@+id/createstudent_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/select_photo"
@@ -104,6 +106,7 @@
         </RelativeLayout>
 
         <Button
+            android:id="@+id/createstudent_create_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create"

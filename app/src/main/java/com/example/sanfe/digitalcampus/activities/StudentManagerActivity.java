@@ -1,7 +1,6 @@
 package com.example.sanfe.digitalcampus.activities;
 
-import android.content.Context;
-import android.content.Intent;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -14,54 +13,51 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
+import com.example.sanfe.digitalcampus.adapters.StudentManagerAdapter;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
-import com.example.sanfe.digitalcampus.logic.data.Subject;
+import com.example.sanfe.digitalcampus.logic.data.Student;
 
 import java.util.ArrayList;
-
-public class SubjectManagerActivity extends AppCompatActivity {
-    //Mirar si les proporcions actionbar / resta activitat son adequades
-    //Afegir appicon amb fletxeta i icon de +
-   //Canviar el JSON per a que apareguin imatges de les assignatures
-    //Canviar el show layout per que es faci mes ampli
-    //Fer que el text quedi justificat
-
-    public static ArrayList<Subject> list;
-    public static ListViewAdapter adapter;
+//Canviar el concatenat del adapter
+//Els noms no apareixen complets a vegades
+public class StudentManagerActivity extends AppCompatActivity {
+    public static final String SELECTION_TEXT = "Selecciona un alumno:";
+    public static ArrayList<Student> list;
+    public static StudentManagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjectmanager);
 
-        list = Singleton.getInstance().getSubjectList();
+        TextView title = (TextView) findViewById (R.id.subjectmanager_selectiontext);
+        title.setText(SELECTION_TEXT);
 
-        ListView listview = (ListView) findViewById(R.id.subjectmanager_list);
+        list = Singleton.getInstance().getStudentList();
 
-
-        adapter = new ListViewAdapter(this, list, getResources().getString(R.string.title_elimination), getResources().getString(R.string.text_elimination));
+        ListView listview = (ListView) findViewById (R.id.subjectmanager_list);
+        adapter = new StudentManagerAdapter(this, list, getResources().getString(R.string.title_elimination), getResources().getString(R.string.text2_elimination));
         listview.setAdapter(adapter);
 
         listview.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent (getApplicationContext(), ShowSubjectActivity.class);
+                /*Intent intent = new Intent(getApplicationContext(), ShowSubjectActivity.class);
                 intent.putExtra("SUBJECT", list.get(position));
                 startActivity(intent);
-                finish();
+                finish(); */
             }
         });
     }
 
-    public static void eliminaAsignatura(int position) {
+    public static void eliminaAlumno(int position) {
         list.remove(position);
         adapter.notifyDataSetChanged();
-        Singleton.getInstance().setSubjectList(list);
+        Singleton.getInstance().setStudentList(list);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -76,7 +72,7 @@ public class SubjectManagerActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(d);
 
         getSupportActionBar().setTitle("  " + getResources().getString(R.string.app_name));
-        getSupportActionBar().setSubtitle("   " + getResources().getString(R.string.subjectmanager_actionbar));
+        getSupportActionBar().setSubtitle("   " + getResources().getString(R.string.studentmanager_actionbar));
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -84,9 +80,9 @@ public class SubjectManagerActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.create_subject:
-                Intent intent = new Intent(getApplicationContext(), CreateSubject1Activity.class);
+                /*Intent intent = new Intent(getApplicationContext(), CreateSubject1Activity.class);
                 startActivity(intent);
-                finish();
+                finish(); */
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

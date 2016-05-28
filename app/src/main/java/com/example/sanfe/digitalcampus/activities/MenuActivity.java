@@ -41,8 +41,10 @@ public class MenuActivity  extends AppCompatActivity {
                         startActivity(intent1);
                         finish();
                         break;
-                    case 1:
-                        break;
+                    case 1: Intent intent2 = new Intent(getApplicationContext(), StudentManagerActivity.class);
+                            startActivity(intent2);
+                            finish();
+                            break;
                     case 2:
                         break;
                     case 3:

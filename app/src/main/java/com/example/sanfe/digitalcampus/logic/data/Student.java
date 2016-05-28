@@ -1,6 +1,9 @@
 package com.example.sanfe.digitalcampus.logic.data;
 
+
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -29,6 +32,13 @@ public class Student implements Serializable{
 
     public Date getStudentBirthdate() {
         return studentBirthdate;
+    }
+
+    public int getStudentAge () {
+        Date date = new Date();
+        Long time = date.getTime() / 1000 - studentBirthdate.getTime() / 1000;
+
+        return Math.round(time) / 31536000;
     }
 
     public void setStudentBirthdate(Date studentBirthdate) {

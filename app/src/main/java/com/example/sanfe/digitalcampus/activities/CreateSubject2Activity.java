@@ -17,7 +17,7 @@ import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
 
 import java.util.ArrayList;
-//Fer que es quedi clicat i revisar si els alumnes es passen correctament
+
 public class CreateSubject2Activity extends AppCompatActivity {
     private StudentListAdapter adapter;
     private ArrayList<Student> list;
