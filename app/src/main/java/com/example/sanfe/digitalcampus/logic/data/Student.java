@@ -2,8 +2,6 @@ package com.example.sanfe.digitalcampus.logic.data;
 
 
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -29,6 +27,8 @@ public class Student implements Serializable{
         this.studentImage = studentImage;
         this.studentName = studentName;
     }
+
+    public Student () {}
 
     public Date getStudentBirthdate() {
         return studentBirthdate;

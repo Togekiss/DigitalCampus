@@ -44,6 +44,12 @@
         <activity
             android:name=".activities.StudentManagerActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.CreateStudentActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.ShowStudentActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

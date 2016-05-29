@@ -1,6 +1,7 @@
 package com.example.sanfe.digitalcampus.activities;
 
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -80,9 +81,9 @@ public class StudentManagerActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.create_subject:
-                /*Intent intent = new Intent(getApplicationContext(), CreateSubject1Activity.class);
+                Intent intent = new Intent(getApplicationContext(), CreateStudentActivity.class);
                 startActivity(intent);
-                finish(); */
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

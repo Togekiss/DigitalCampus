@@ -23,7 +23,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_toRightOf="@id/showstudent_image"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"/>
 
         <TextView
@@ -34,7 +34,7 @@
             android:textSize="20sp"
             android:layout_toRightOf="@id/showstudent_image"
             android:layout_below="@id/showstudent_name"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"/>
 
         <TextView
@@ -45,7 +45,7 @@
             android:textSize="20sp"
             android:layout_toRightOf="@id/showstudent_image"
             android:layout_below="@id/showstudent_class"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"/>
 
         <TextView
@@ -56,7 +56,7 @@
             android:textSize="20sp"
             android:layout_toRightOf="@id/showstudent_image"
             android:layout_below="@id/showstudent_date"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"/>
 
     </RelativeLayout>
@@ -69,12 +69,12 @@
         android:textStyle="bold"
         android:layout_marginTop="40dp"/>
 
-    <ListView
+    <TextView
         android:id="@+id/showstudent_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-
-    </ListView>
+        android:layout_marginTop="10dp"
+        android:text="@string/birth"
+        android:textSize="20sp"/>
 
 </LinearLayout>

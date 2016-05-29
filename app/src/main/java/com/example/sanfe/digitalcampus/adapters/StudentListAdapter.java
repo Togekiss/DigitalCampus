@@ -73,6 +73,7 @@ public class StudentListAdapter extends BaseAdapter {
             }
         }catch (NullPointerException e) {}
 
+
        row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
