@@ -4,6 +4,9 @@ package com.example.sanfe.digitalcampus.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -51,11 +54,45 @@ public class ShowSubjectActivity extends AppCompatActivity {
             list = subject.getSubjectStudents();
             adapter = new ShowSubjectStudentListAdapter(this, list);
             listview.setAdapter(adapter);
+            setListViewHeightBasedOnItems(listview);
         }
     }
 
     public void onBackPressed() {
         this.startActivity(new Intent(ShowSubjectActivity.this, SubjectManagerActivity.class));
         finish();
+    }
+
+    private static boolean setListViewHeightBasedOnItems(ListView listView) {
+
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter != null) {
+
+            int numberOfItems = listAdapter.getCount();
+
+            // Get total height of all items.
+            int totalItemsHeight = 0;
+            for (int itemPos = 0; itemPos < numberOfItems; itemPos++) {
+                View item = listAdapter.getView(itemPos, null, listView);
+                item.measure(0, 0);
+                totalItemsHeight += item.getMeasuredHeight();
+            }
+
+            // Get total height of all item dividers.
+            int totalDividersHeight = listView.getDividerHeight() *
+                    (numberOfItems - 1);
+
+            // Set list height.
+            ViewGroup.LayoutParams params = listView.getLayoutParams();
+            params.height = totalItemsHeight + totalDividersHeight;
+            listView.setLayoutParams(params);
+            listView.requestLayout();
+
+            return true;
+
+        } else {
+            return false;
+        }
+
     }
 }
