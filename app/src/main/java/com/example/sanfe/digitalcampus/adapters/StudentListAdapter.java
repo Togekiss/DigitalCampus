@@ -2,6 +2,7 @@ package com.example.sanfe.digitalcampus.adapters;
 
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,12 +46,11 @@ public class StudentListAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View row = convertView;
-
         if (row == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(R.layout.studentslist_row, parent, false);
         }
-
+        Log.d("students", "inside adapter");
         Student student = (Student) getItem(position);
         row.setTag(student);
 
@@ -62,6 +62,7 @@ public class StudentListAdapter extends BaseAdapter {
         name.setText(student.getStudentName());
 
         try {
+            //per quan tirem enrere
             if (!CreateSubject2Activity.subject.getSubjectStudents().isEmpty()) {
                 for (Student a : CreateSubject2Activity.subject.getSubjectStudents()) {
                     if (a.getStudentName().equals(student.getStudentName()) && a.getStudentImage() == student.getStudentImage()
@@ -79,11 +80,22 @@ public class StudentListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 if (!checkbox.isChecked()) {
                  checkbox.setChecked(true);
+                    Log.d("students","row is checked");
                 }
                 else {
                  checkbox.setChecked(false);
+                    Log.d("students","row is unchecked");
                 }
                 CreateSubject2Activity.checkboxlist[position] = !CreateSubject2Activity.checkboxlist[position];
+            }
+        });
+
+        checkbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CreateSubject2Activity.checkboxlist[position] = !CreateSubject2Activity.checkboxlist[position];
+                if (CreateSubject2Activity.checkboxlist[position]) Log.d("students", "box is checked");
+                else Log.d("students", "box is unchecked");
             }
         });
 
