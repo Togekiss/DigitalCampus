@@ -47,7 +47,7 @@ public class CreateSubject2Activity extends AppCompatActivity {
         }
 
         back.setText("< Anterior");
-        adapter = new StudentListAdapter(getApplicationContext(), list);
+        adapter = new StudentListAdapter(this, list);
         listview.setAdapter(adapter);
 
         back.setOnClickListener(new View.OnClickListener() {
