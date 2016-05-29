@@ -18,7 +18,7 @@ public class CreateSubject1Activity extends AppCompatActivity {
 //Controlar que 2 assignatures no es diguin igual
 //Falta ActionBar i Hints
     //Max caràcters de descripció?
-    private Subject subject;
+    public static Subject subject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +31,22 @@ public class CreateSubject1Activity extends AppCompatActivity {
         final EditText title = (EditText) findViewById(R.id.createsubject1_titlefield);
         final EditText description = (EditText) findViewById(R.id.createsubject1_descriptionfield);
         Button continue_button = (Button) findViewById(R.id.createsubject1_nextbutton);
+        subject = new Subject();
 
         if (bundle != null) {
-            subject = (Subject) bundle.get("SUBJECT2");
+            Subject subject1 = (Subject) bundle.get("SUBJECT2");
             try {
-                title.setText(subject.getSubjectTitle());
-                description.setText(subject.getSubjectDescription());
+                title.setText(subject1.getSubjectTitle());
+                description.setText(subject1.getSubjectDescription());
+                subject = new Subject (subject1.getSubjectStudents(), subject1.getSubjectThemes());
             }catch(Exception e){}
         }
 
         continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                subject = new Subject (title.getText().toString(), description.getText().toString());
+                subject.setSubjectTitle(title.getText().toString());
+                subject.setSubjectDescription(description.getText().toString());
                 Intent intent = new Intent (getApplicationContext(), CreateSubject2Activity.class);
                 intent.putExtra("SUBJECT1", subject);
                 startActivity(intent);

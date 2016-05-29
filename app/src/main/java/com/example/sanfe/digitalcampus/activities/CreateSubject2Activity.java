@@ -54,8 +54,18 @@ public class CreateSubject2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Subject subject = new Subject();
+                ArrayList<Student> students = new ArrayList<>();
+                for (int i = 0; i < checkboxlist.length; i++) {
+                    if (checkboxlist[i]) {
+                        students.add(list.get(i));
+                    }
+                }
+
                 if (bundle != null) {
                     subject = (Subject) bundle.get("SUBJECT1");
+                    try {
+                        subject.setSubjectStudents(students);
+                    }catch (Exception e){}
                 }
                 Intent intent = new Intent (getApplicationContext(), CreateSubject1Activity.class);
                 intent.putExtra("SUBJECT2", subject);

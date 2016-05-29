@@ -30,8 +30,19 @@ public class CreateSubject3Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final Bundle bundle = intent.getExtras();
+        Subject subject = new Subject();
+
+        if (bundle != null) {
+            subject = (Subject) bundle.get("SUBJECT2");
+        }
 
         list = new ArrayList<>();
+
+        if (subject != null) {
+            if (subject.getSubjectThemes() != null) {
+                list = subject.getSubjectThemes();
+            }
+        }
 
         ListView listview = (ListView) findViewById(R.id.createsubject3_list);
         final EditText textfield = (EditText) findViewById(R.id.createsubject3_subject);
@@ -58,6 +69,9 @@ public class CreateSubject3Activity extends AppCompatActivity {
                 Subject subject = new Subject();
                 if (bundle != null) {
                     subject = (Subject) bundle.get("SUBJECT2");
+                }
+                if (subject != null) {
+                    subject.setSubjectThemes(list);
                 }
                 Intent intent = new Intent (getApplicationContext(), CreateSubject2Activity.class);
                 intent.putExtra("SUBJECT1", subject);

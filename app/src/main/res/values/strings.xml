@@ -41,4 +41,5 @@
     <string name="location">Aula</string>
     <string name="save">Guardar</string>
     <string name="PickaDate">Escoge una Fecha…</string>
+    <string name="select_students">Selecciona los alumnos inscritos</string>
 </resources>
