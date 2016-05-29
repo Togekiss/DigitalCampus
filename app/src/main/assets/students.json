@@ -4,7 +4,7 @@
     "studentBirthdate": "1996-03-01",
     "studentCareer": "Informática",
     "studentGender": "Mujer",
-    "studentImage": 12345,
+    "studentImage": 2130903040,
     "studentSubjects": [
       "PAED",
       "Android"
@@ -15,7 +15,7 @@
     "studentBirthdate": "1996-06-27",
     "studentCareer": "Informática",
     "studentGender": "Hombre",
-    "studentImage": 12345,
+    "studentImage": 2130903040,
     "studentSubjects": [
       "Android",
       "DPO"
@@ -26,7 +26,7 @@
     "studentBirthdate": "1996-12-15",
     "studentCareer": "Telecomunicaciones",
     "studentGender": "Mujer",
-    "studentImage": 12345,
+    "studentImage": 2130903040,
     "studentSubjects": [
       "DPO",
       "Electrónica"
@@ -37,7 +37,7 @@
     "studentBirthdate": "1996-07-25",
     "studentCareer": "Informática",
     "studentGender": "Hombre",
-    "studentImage": 12345,
+    "studentImage": 2130903040,
     "studentSubjects": [
       "Redes",
       "PAED"
@@ -48,7 +48,7 @@
     "studentBirthdate": "1996-02-10",
     "studentCareer": "Electrónica",
     "studentGender": "Mujer",
-    "studentImage": 12345,
+    "studentImage": 2130903040,
     "studentSubjects": [
       "Electrónica",
       "Redes"

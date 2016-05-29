@@ -1,9 +1,7 @@
-package com.example.sanfe.digitalcampus.logic.json;
+package com.example.sanfe.digitalcampus.logic.dataLoader;
 
-import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.preference.PreferenceManager;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.logic.data.Exam;

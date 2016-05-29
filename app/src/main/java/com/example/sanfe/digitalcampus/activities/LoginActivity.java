@@ -2,9 +2,7 @@ package com.example.sanfe.digitalcampus.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
 

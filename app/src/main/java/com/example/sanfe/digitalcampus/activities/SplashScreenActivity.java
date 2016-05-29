@@ -1,23 +1,17 @@
 package com.example.sanfe.digitalcampus.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ProgressBar;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
-import com.example.sanfe.digitalcampus.logic.json.GsonManager;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataLoader.GsonManager;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -38,7 +32,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         new SharedPreferencesManager(getApplicationContext());
         if (SharedPreferencesManager.isFirstTimeLaunched()) {
-            Log.d("loading", "is first time launched");
+            Log.d("loading", "launched for the first time");
             GsonManager.loadSingleton(getResources(), getAssets());
             SharedPreferencesManager.updateStudentsJSON();
             SharedPreferencesManager.updateSubjectsJSON();

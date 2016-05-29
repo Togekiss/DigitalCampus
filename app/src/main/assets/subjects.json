@@ -2,14 +2,14 @@
   {
     "subjectTitle": "Android",
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
-    "image": 12345,
+    "subjectImage": 2130903040,
     "subjectStudents": [
       {
         "studentName": "Marta Zapatero",
         "studentBirthdate": "1996-03-01",
         "studentCareer": "Informática",
         "studentGender": "Mujer",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "PAED",
           "Android"
@@ -20,7 +20,7 @@
         "studentBirthdate": "1996-06-26",
         "studentCareer": "Informática",
         "studentGender": "Hombre",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "Android",
           "DPO"
@@ -39,14 +39,14 @@
   {
     "subjectTitle": "PAED",
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
-    "image": 12345,
+    "subjectImage": 2130903040,
     "subjectStudents": [
       {
         "studentName": "Àlex Jordà",
         "studentBirthdate": "1996-07-27",
         "studentCareer": "Informática",
         "studentGender": "Hombre",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "Redes",
           "PAED"
@@ -57,7 +57,7 @@
         "studentBirthdate": "1996-03-01",
         "studentCareer": "Informática",
         "studentGender": "Mujer",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "PAED",
           "Android"
@@ -76,14 +76,14 @@
   {
     "subjectTitle": "DPO",
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
-    "image": 12345,
+    "subjectImage": 2130903040,
     "subjectStudents": [
       {
         "studentName": "Roger Marrugat",
         "studentBirthdate": "1996-06-26",
         "studentCareer": "Informática",
         "studentGender": "Hombre",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "Android",
           "DPO"
@@ -94,7 +94,7 @@
         "studentBirthdate": "1996-12-01",
         "studentCareer": "Telecomunicaciones",
         "studentGender": "Mujer",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "DPO",
           "Electrónica"
@@ -113,14 +113,14 @@
   {
     "subjectTitle": "Electrónica",
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
-    "image": 12345,
+    "subjectImage": 2130903040,
     "subjectStudents": [
       {
         "studentName": "Núria Valls",
         "studentBirthdate": "1996-12-01",
         "studentCareer": "Telecomunicaciones",
         "studentGender": "Mujer",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "DPO",
           "Electrónica"
@@ -131,7 +131,7 @@
         "studentBirthdate": "1996-02-10",
         "studentCareer": "Electrónica",
         "studentGender": "Mujer",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "Electrónica",
           "Redes"
@@ -150,14 +150,14 @@
   {
     "subjectTitle": "Redes",
     "subjectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus vulputate sapien, nec vulputate risus. Mauris porttitor mollis felis sed iaculis. Nullam at sapien enim.",
-    "image": 12345,
+    "subjectImage": 2130903040,
     "subjectStudents": [
       {
         "studentName": "Alejandra Vendrell",
         "studentBirthdate": "1996-02-10",
         "studentCareer": "Electrónica",
         "studentGender": "Mujer",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "Electrónica",
           "Redes"
@@ -168,7 +168,7 @@
         "studentBirthdate": "1996-07-27",
         "studentCareer": "Informática",
         "studentGender": "Hombre",
-        "studentImage": 12345,
+        "studentImage": 2130903040,
         "studentSubjects": [
           "Redes",
           "PAED"

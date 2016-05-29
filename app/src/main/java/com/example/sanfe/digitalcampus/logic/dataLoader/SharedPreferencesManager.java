@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.logic;
+package com.example.sanfe.digitalcampus.logic.dataLoader;
 
 import android.content.Context;
 import android.content.SharedPreferences;

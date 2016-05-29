@@ -1,13 +1,11 @@
 package com.example.sanfe.digitalcampus.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,7 +16,7 @@ import android.widget.GridView;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.GridViewImageAdapter;
-import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
 
 public class MenuActivity  extends AppCompatActivity {
 

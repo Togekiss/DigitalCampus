@@ -10,13 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
 import com.example.sanfe.digitalcampus.adapters.ThemesListAdapter;
-import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
-import com.example.sanfe.digitalcampus.logic.json.GsonManager;
 
 import java.util.ArrayList;
 

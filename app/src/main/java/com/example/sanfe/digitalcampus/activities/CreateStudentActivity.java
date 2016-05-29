@@ -5,7 +5,6 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,7 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 
@@ -26,7 +25,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
 //Controlar data i fer el select foto
 //Vigilar la date
