@@ -18,6 +18,7 @@ import android.widget.GridView;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.GridViewImageAdapter;
+import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
 
 public class MenuActivity  extends AppCompatActivity {
 
@@ -47,10 +48,7 @@ public class MenuActivity  extends AppCompatActivity {
                         break;
                     case 3:
 
-                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putBoolean("rememberMe",false);
-                        editor.apply();
+                        SharedPreferencesManager.setRememberMe(false);
 
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);

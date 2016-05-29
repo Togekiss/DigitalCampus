@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ProgressBar;
 
 import com.example.sanfe.digitalcampus.R;
@@ -34,8 +35,17 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splashscreen);
 
         mProgress = (ProgressBar) findViewById(R.id.progress_bar);
+
         new SharedPreferencesManager(getApplicationContext());
-        SharedPreferencesManager.loadSingleton(getResources());
+        if (SharedPreferencesManager.isFirstTimeLaunched()) {
+            Log.d("loading", "is first time launched");
+            GsonManager.loadSingleton(getResources(), getAssets());
+            SharedPreferencesManager.updateStudentsJSON();
+            SharedPreferencesManager.updateSubjectsJSON();
+            SharedPreferencesManager.updateExamsJSON();
+            SharedPreferencesManager.setFirstTimeLaunched();
+        }
+        else SharedPreferencesManager.loadSingleton(getResources());
 
         Timer T = new Timer();
         T.scheduleAtFixedRate(new TimerTask() {
@@ -67,7 +77,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 //mirar demenar permisos de la galeria de fotos
                 //marshmallow t'obliga a fer-ho
 
-                if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("rememberMe", true)) {
+                if (SharedPreferencesManager.isRememberMe()) {
                     Intent intent = new Intent (getApplicationContext(), MenuActivity.class);
                     startActivity(intent);
                     finish();

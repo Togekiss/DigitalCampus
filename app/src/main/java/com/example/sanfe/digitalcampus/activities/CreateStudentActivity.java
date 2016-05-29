@@ -77,14 +77,14 @@ public class CreateStudentActivity extends AppCompatActivity {
         create_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
                 Student student = new Student();
                 if (male.isChecked()) {
                     try {
                         student = new Student(df.parse(date.getText().toString()), spinner.getSelectedItem().toString(),
                         "Hombre", R.mipmap.app_icon, name.getText().toString(), new ArrayList<String>());
                         Singleton.getInstance().addStudent(student);
-                        SharedPreferencesManager.updateStudentsJSON();
+                        //SharedPreferencesManager.updateStudentsJSON();
                         Intent intent = new Intent (getApplicationContext(), ShowStudentActivity.class);
                         intent.putExtra("STUDENT", student);
                         startActivity(intent);

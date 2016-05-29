@@ -19,9 +19,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * OBSOLETO: Usar sólo en caso de emergencia
+ * Usar sólo en caso de primera ejecución
  * para sacar datos de los archivos y
- * volverlos a cargar en SharedPreferences
+ * cargarlos en SharedPreferences.
  * Created by Marta on 10/05/2016.
  */
 public class GsonManager {
@@ -69,18 +69,5 @@ public class GsonManager {
         }
         return json;
     }
-
-    public static void updateSubjectsJSON() {
-
-    }
-
-    public static void updateStudentsJSON() {
-
-    }
-
-    public static void updateExamsJSON() {
-
-    }
-
 
 }

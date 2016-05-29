@@ -85,6 +85,22 @@ public class SharedPreferencesManager {
 
     }
 
+    public static void setRememberMe(boolean checked) {
+        editor.putBoolean("rememberMe", checked);
+        editor.apply();
+    }
 
+    public static boolean isRememberMe() {
+         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("rememberMe", false);
+    }
+
+    public static void setFirstTimeLaunched() {
+        editor.putBoolean("firstTimeLaunched", false);
+        editor.apply();
+    }
+
+    public static boolean isFirstTimeLaunched() {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("firstTimeLaunched", true);
+    }
 
 }

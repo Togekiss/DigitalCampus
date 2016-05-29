@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
 
@@ -53,10 +54,7 @@ public class LoginActivity  extends AppCompatActivity {
                             }
                             else {
                                 if (remember_me.isChecked()) {
-                                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                                    SharedPreferences.Editor editor = preferences.edit();
-                                    editor.putBoolean("rememberMe",true);
-                                    editor.apply();
+                                    SharedPreferencesManager.setRememberMe(true);
                                 }
 
                                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
