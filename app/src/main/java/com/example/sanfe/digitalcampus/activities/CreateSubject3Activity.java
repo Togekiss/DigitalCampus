@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
 import com.example.sanfe.digitalcampus.adapters.ThemesListAdapter;
+import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
@@ -104,7 +105,8 @@ public class CreateSubject3Activity extends AppCompatActivity {
                 }
             }
         }
-
         Singleton.getInstance().addSubject(subject);
+        SharedPreferencesManager.updateSubjectsJSON();
+        SharedPreferencesManager.updateStudentsJSON();
     }
 }

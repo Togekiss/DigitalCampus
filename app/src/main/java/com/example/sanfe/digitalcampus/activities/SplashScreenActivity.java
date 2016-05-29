@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.json.GsonManager;
 import com.google.gson.Gson;
@@ -33,8 +34,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splashscreen);
 
         mProgress = (ProgressBar) findViewById(R.id.progress_bar);
-
-        GsonManager.loadSingleton(getResources(), getAssets());
+        new SharedPreferencesManager(getApplicationContext());
+        SharedPreferencesManager.loadSingleton(getResources());
 
         Timer T = new Timer();
         T.scheduleAtFixedRate(new TimerTask() {

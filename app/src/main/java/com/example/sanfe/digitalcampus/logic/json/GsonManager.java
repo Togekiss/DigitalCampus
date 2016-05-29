@@ -1,7 +1,9 @@
 package com.example.sanfe.digitalcampus.logic.json;
 
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.preference.PreferenceManager;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.logic.data.Exam;
@@ -17,6 +19,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * OBSOLETO: Usar sólo en caso de emergencia
+ * para sacar datos de los archivos y
+ * volverlos a cargar en SharedPreferences
  * Created by Marta on 10/05/2016.
  */
 public class GsonManager {
@@ -66,6 +71,14 @@ public class GsonManager {
     }
 
     public static void updateSubjectsJSON() {
+
+    }
+
+    public static void updateStudentsJSON() {
+
+    }
+
+    public static void updateExamsJSON() {
 
     }
 

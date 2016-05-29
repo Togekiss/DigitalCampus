@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.logic.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 
@@ -83,6 +84,7 @@ public class CreateStudentActivity extends AppCompatActivity {
                         student = new Student(df.parse(date.getText().toString()), spinner.getSelectedItem().toString(),
                         "Hombre", R.mipmap.app_icon, name.getText().toString(), new ArrayList<String>());
                         Singleton.getInstance().addStudent(student);
+                        SharedPreferencesManager.updateStudentsJSON();
                         Intent intent = new Intent (getApplicationContext(), ShowStudentActivity.class);
                         intent.putExtra("STUDENT", student);
                         startActivity(intent);
@@ -97,6 +99,7 @@ public class CreateStudentActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     Singleton.getInstance().addStudent(student);
+                    SharedPreferencesManager.updateStudentsJSON();
                     Intent intent = new Intent (getApplicationContext(), ShowStudentActivity.class);
                     intent.putExtra("STUDENT", student);
                     startActivity(intent);

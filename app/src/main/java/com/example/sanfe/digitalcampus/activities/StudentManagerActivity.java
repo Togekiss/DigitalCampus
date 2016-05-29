@@ -83,6 +83,7 @@ public class StudentManagerActivity extends AppCompatActivity {
             case R.id.create_subject:
                 Intent intent = new Intent(getApplicationContext(), CreateStudentActivity.class);
                 startActivity(intent);
+                //poso finish, o s'hauria d'actualitzar la llista quan es tornes enrere
                 finish();
                 return true;
             default:
