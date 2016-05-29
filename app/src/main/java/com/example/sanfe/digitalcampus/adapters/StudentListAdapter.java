@@ -50,7 +50,6 @@ public class StudentListAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(R.layout.studentslist_row, parent, false);
         }
-        Log.d("students", "inside adapter");
         Student student = (Student) getItem(position);
         row.setTag(student);
 
@@ -79,11 +78,9 @@ public class StudentListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 if (!checkbox.isChecked()) {
                  checkbox.setChecked(true);
-                    Log.d("students","row is checked");
                 }
                 else {
                  checkbox.setChecked(false);
-                    Log.d("students","row is unchecked");
                 }
                 CreateSubject2Activity.checkboxlist[position] = !CreateSubject2Activity.checkboxlist[position];
             }
@@ -93,8 +90,6 @@ public class StudentListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 CreateSubject2Activity.checkboxlist[position] = !CreateSubject2Activity.checkboxlist[position];
-                if (CreateSubject2Activity.checkboxlist[position]) Log.d("students", "box is checked");
-                else Log.d("students", "box is unchecked");
             }
         });
 

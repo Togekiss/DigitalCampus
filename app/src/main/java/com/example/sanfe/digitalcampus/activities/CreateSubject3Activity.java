@@ -92,17 +92,17 @@ public class CreateSubject3Activity extends AppCompatActivity {
     }
 
     private void addNewSubjectToSystem(Subject subject) {
-        Log.i("subject", "let's start");
+        Log.d("subject", "let's start");
         subject.setSubjectImage(R.mipmap.app_icon);
-        if (subject.getSubjectStudents().isEmpty()) {
-            Log.i("subject", "empty list");
-        }
+
         for (Student student: subject.getSubjectStudents()) {
-            Log.i("student", student.getStudentName());
-            int sIndex = Singleton.getInstance().getStudentList().indexOf(student);
-            Log.i("student", sIndex + "");
-            //Log.i("student", "student found: " + Singleton.getInstance().getStudentList().get(sIndex).getStudentName());
-           // Singleton.getInstance().getStudentList().get(sIndex).addStudentSubject(subject.getSubjectTitle());
+            Log.d("students", student.getStudentName());
+            for (Student studentSingleton : Singleton.getInstance().getStudentList()) {
+                if (student.getStudentName().equals(studentSingleton.getStudentName())) {
+                    int sIndex = Singleton.getInstance().getStudentList().indexOf(studentSingleton);
+                    Singleton.getInstance().getStudentList().get(sIndex).addStudentSubject(subject.getSubjectTitle());
+                }
+            }
         }
 
         Singleton.getInstance().addSubject(subject);

@@ -49,7 +49,6 @@ public class CreateSubject2Activity extends AppCompatActivity {
         back.setText("< Anterior");
         adapter = new StudentListAdapter(getApplicationContext(), list);
         listview.setAdapter(adapter);
-        Log.d("students", "adapter has been set");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,13 +69,9 @@ public class CreateSubject2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Subject subject = new Subject();
                 ArrayList<Student> students = new ArrayList<>();
-                Log.d("students", "starting to check checkboxes");
-                Log.d("students", checkboxlist.length + "");
                 for (int i = 0; i < checkboxlist.length; i++) {
-                    Log.d("students", "student: " + list.get(i).getStudentName());
                     if (checkboxlist[i]) {
                         students.add(list.get(i));
-                        Log.d("students", "is selected");
                     }
                 }
 
