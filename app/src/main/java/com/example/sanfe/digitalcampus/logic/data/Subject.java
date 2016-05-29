@@ -40,6 +40,11 @@ public class Subject implements Serializable{
         this.subjectDescription = subjectDescription;
     }
 
+    public Subject (ArrayList<Student> subjectStudents, ArrayList<String> subjectThemes) {
+        this.subjectStudents = subjectStudents;
+        this.subjectThemes = subjectThemes;
+    }
+
     public String getSubjectDescription() {
         return subjectDescription;
     }
