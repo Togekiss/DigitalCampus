@@ -9,14 +9,14 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_weight="4">
 
         <TextView
             android:id="@+id/examlist_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/degree"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textStyle="bold"/>
 
         <TextView
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/degree"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:layout_alignParentRight="true"/>
 
         <TextView
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/degree"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"/>
 
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/degree"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:layout_alignParentBottom="true"/>
 
         <TextView
@@ -49,10 +49,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/degree"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:layout_below="@id/examlist_date"
             android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="50dp"/>
 
     </RelativeLayout>
 

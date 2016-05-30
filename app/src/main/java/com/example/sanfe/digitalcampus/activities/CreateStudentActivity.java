@@ -82,7 +82,7 @@ public class CreateStudentActivity extends AppCompatActivity {
                         student = new Student(df.parse(date.getText().toString()), spinner.getSelectedItem().toString(),
                         "Hombre", R.mipmap.app_icon, name.getText().toString(), new ArrayList<String>());
                         Singleton.getInstance().addStudent(student);
-                        //SharedPreferencesManager.updateStudentsJSON();
+                        SharedPreferencesManager.updateStudentsJSON();
                         Intent intent = new Intent (getApplicationContext(), ShowStudentActivity.class);
                         intent.putExtra("STUDENT", student);
                         startActivity(intent);

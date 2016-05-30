@@ -12,31 +12,35 @@
         android:textSize="25sp"
         android:layout_marginTop="5dp"/>
 
-    <EditText
+    <TextView
         android:id="@+id/field_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="date"/>
+        android:text="@string/PickaDate"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/time"
         android:textSize="25sp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="15dp"/>
 
-    <EditText
+    <TextView
         android:id="@+id/field_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="time"/>
+        android:text="@string/PickaTime"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/degree"
         android:textSize="25sp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="15dp"/>
 
     <Spinner
         android:id="@+id/field_degree"
@@ -68,10 +72,11 @@
         android:layout_height="40dp"/>
 
     <Button
+        android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/save"
         android:layout_gravity="end"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

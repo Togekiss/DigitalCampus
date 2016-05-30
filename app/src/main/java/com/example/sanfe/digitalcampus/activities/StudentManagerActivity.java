@@ -106,4 +106,8 @@ public class StudentManagerActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    public void onBackPressed() {
+        finish();
+    }
 }

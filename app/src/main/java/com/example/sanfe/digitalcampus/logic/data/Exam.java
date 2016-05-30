@@ -1,11 +1,12 @@
 package com.example.sanfe.digitalcampus.logic.data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Marta on 06/05/2016.
  */
-public class Exam {
+public class Exam implements Serializable{
 
     private Date examDate; //both day and hour
     private String examCareer;
@@ -18,6 +19,8 @@ public class Exam {
         this.examDate = examDate;
         this.examSubject = examSubject;
     }
+
+    public Exam(){}
 
     public String getExamCareer() {
         return examCareer;

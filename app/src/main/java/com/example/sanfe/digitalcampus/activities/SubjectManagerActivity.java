@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
+import com.example.sanfe.digitalcampus.logic.data.Exam;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
@@ -53,7 +54,7 @@ public class SubjectManagerActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent (getApplicationContext(), ShowSubjectActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ShowSubjectActivity.class);
                 intent.putExtra("SUBJECT", list.get(position));
                 startActivity(intent);
                 finish();
@@ -71,9 +72,22 @@ public class SubjectManagerActivity extends AppCompatActivity {
                 }
             }
         }
+
+        int sIndex = 0;
+        boolean found = false;
+
+        while (sIndex < Singleton.getInstance().getExamList().size() && !found) {
+            if (list.get(position).getSubjectTitle().equals(Singleton.getInstance().getExamList().get(sIndex).getExamSubject())) {
+                Singleton.getInstance().getExamList().remove(sIndex);
+                found = true;
+            }
+            sIndex++;
+        }
+
         Singleton.getInstance().removeSubject(list.get(position));
         SharedPreferencesManager.updateSubjectsJSON();
         SharedPreferencesManager.updateStudentsJSON();
+        SharedPreferencesManager.updateExamsJSON();
 
         adapter.notifyDataSetChanged();
     }
@@ -105,5 +119,9 @@ public class SubjectManagerActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void onBackPressed() {
+        finish();
     }
 }
