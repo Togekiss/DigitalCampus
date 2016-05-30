@@ -26,7 +26,9 @@
         android:id="@+id/createsubject3_subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/subject_hint"/>
+        android:hint="@string/subject_hint"
+        android:imeOptions="actionDone"
+        android:singleLine="true"/>
 
     <Button
         android:id="@+id/createsubject3_add"

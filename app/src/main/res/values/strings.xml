@@ -19,7 +19,7 @@
     <string name="description">Descripción</string>
     <string name="createsubject_continue">Continuar ></string>
     <string name="createsubject_back">Anterior</string>
-    <string name="createsubject_text">Introduce el temario de la asignatura:</string>
+    <string name="createsubject_text">Introduce el temario:</string>
     <string name="subject_hint">Nombre tema…</string>
     <string name="insert">Insertar</string>
     <string name="info">INFORMACIÓN BÁSICA</string>

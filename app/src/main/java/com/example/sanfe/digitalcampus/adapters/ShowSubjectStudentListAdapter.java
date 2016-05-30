@@ -58,7 +58,7 @@ public class ShowSubjectStudentListAdapter extends BaseAdapter {
         TextView name = (TextView) row.findViewById(R.id.studentsshow_name);
         TextView degree = (TextView) row.findViewById(R.id.studentsshow_class);
 
-        image.setImageResource(R.mipmap.app_icon);
+        image.setImageResource(student.getStudentImage());
         name.setText(student.getStudentName());
         degree.setText(student.getStudentCareer());
 
