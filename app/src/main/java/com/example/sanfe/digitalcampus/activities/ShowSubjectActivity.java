@@ -27,6 +27,7 @@ public class ShowSubjectActivity extends AppCompatActivity {
         final Bundle bundle = intent.getExtras();
         Subject subject = new Subject();
         String themes_text = new String();
+        list = new ArrayList<>();
         int index = 1;
 
         if (bundle != null) {

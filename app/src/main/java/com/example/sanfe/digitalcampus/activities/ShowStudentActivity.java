@@ -11,7 +11,7 @@ import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
 
 public class ShowStudentActivity extends AppCompatActivity {
-//Visualizar imagen
+//Visualizar imagen, control de null
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,5 +46,10 @@ public class ShowStudentActivity extends AppCompatActivity {
 
         subjects.setText(subject);
 
+    }
+
+    public void onBackPressed() {
+        this.startActivity(new Intent(ShowStudentActivity.this, StudentManagerActivity.class));
+        finish();
     }
 }

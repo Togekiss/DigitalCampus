@@ -89,4 +89,8 @@ public class Student implements Serializable{
         this.studentSubjects.add(subject);
     }
 
+    public void removeStudentSubject (String subject) {
+        this.studentSubjects.remove(subject);
+    }
+
 }

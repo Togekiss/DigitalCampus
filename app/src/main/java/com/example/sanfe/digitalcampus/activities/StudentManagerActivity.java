@@ -8,6 +8,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,6 +21,8 @@ import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.StudentManagerAdapter;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
+import com.example.sanfe.digitalcampus.logic.data.Subject;
+import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
 
 import java.util.ArrayList;
 //Canviar el concatenat del adapter
@@ -47,18 +50,31 @@ public class StudentManagerActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*Intent intent = new Intent(getApplicationContext(), ShowSubjectActivity.class);
-                intent.putExtra("SUBJECT", list.get(position));
+                Intent intent = new Intent(getApplicationContext(), ShowStudentActivity.class);
+                intent.putExtra("STUDENT", list.get(position));
                 startActivity(intent);
-                finish(); */
+                finish();
             }
         });
     }
 
     public static void eliminaAlumno(int position) {
-        list.remove(position);
+
+        try {
+            for (String subject : list.get(position).getStudentSubjects()) {
+                for (Subject subjectSingleton : Singleton.getInstance().getSubjectList()) {
+                    if (subject.equals(subjectSingleton.getSubjectTitle())) {
+                        int sIndex = Singleton.getInstance().getSubjectList().indexOf(subjectSingleton);
+                        Singleton.getInstance().getSubjectList().get(sIndex).removeSubjectStudent(list.get(position));
+                    }
+                }
+            }
+        }catch (Exception e) {}
+        Singleton.getInstance().removeStudent(list.get(position));
+        SharedPreferencesManager.updateSubjectsJSON();
+        SharedPreferencesManager.updateStudentsJSON();
+
         adapter.notifyDataSetChanged();
-        Singleton.getInstance().setStudentList(list);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

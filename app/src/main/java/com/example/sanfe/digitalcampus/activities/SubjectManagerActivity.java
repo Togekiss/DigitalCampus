@@ -8,6 +8,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,7 +20,9 @@ import android.widget.Toast;
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
+import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
+import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
 
 import java.util.ArrayList;
 
@@ -29,7 +32,7 @@ public class SubjectManagerActivity extends AppCompatActivity {
    //Canviar el JSON per a que apareguin imatges de les assignatures
     //Canviar el show layout per que es faci mes ampli
     //Fer que el text quedi justificat
-
+    //Borrar Student de la assignatura al borrar un student
     public static ArrayList<Subject> list;
     public static ListViewAdapter adapter;
 
@@ -37,11 +40,11 @@ public class SubjectManagerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjectmanager);
+        list = new ArrayList<>();
 
         list = Singleton.getInstance().getSubjectList();
 
         ListView listview = (ListView) findViewById(R.id.subjectmanager_list);
-
 
         adapter = new ListViewAdapter(this, list, getResources().getString(R.string.title_elimination), getResources().getString(R.string.text_elimination));
         listview.setAdapter(adapter);
@@ -59,9 +62,20 @@ public class SubjectManagerActivity extends AppCompatActivity {
     }
 
     public static void eliminaAsignatura(int position) {
-        list.remove(position);
+
+        for (Student student: list.get(position).getSubjectStudents()) {
+            for (Student studentSingleton : Singleton.getInstance().getStudentList()) {
+                if (student.getStudentName().equals(studentSingleton.getStudentName())) {
+                    int sIndex = Singleton.getInstance().getStudentList().indexOf(studentSingleton);
+                    Singleton.getInstance().getStudentList().get(sIndex).removeStudentSubject(list.get(position).getSubjectTitle());
+                }
+            }
+        }
+        Singleton.getInstance().removeSubject(list.get(position));
+        SharedPreferencesManager.updateSubjectsJSON();
+        SharedPreferencesManager.updateStudentsJSON();
+
         adapter.notifyDataSetChanged();
-        Singleton.getInstance().setSubjectList(list);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

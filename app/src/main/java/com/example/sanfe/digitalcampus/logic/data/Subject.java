@@ -1,5 +1,7 @@
 package com.example.sanfe.digitalcampus.logic.data;
 
+import android.util.Log;
+
 import com.example.sanfe.digitalcampus.logic.data.Student;
 
 import java.io.Serializable;
@@ -83,6 +85,10 @@ public class Subject implements Serializable{
 
     public void setSubjectTitle(String subjectTitle) {
         this.subjectTitle = subjectTitle;
+    }
+
+    public void removeSubjectStudent (Student student) {
+        this.subjectStudents.remove(student);
     }
 
 

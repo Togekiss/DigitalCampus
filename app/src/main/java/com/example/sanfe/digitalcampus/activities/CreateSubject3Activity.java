@@ -38,10 +38,8 @@ public class CreateSubject3Activity extends AppCompatActivity {
 
         list = new ArrayList<>();
 
-        if (subject != null) {
-            if (subject.getSubjectThemes() != null) {
-                list = subject.getSubjectThemes();
-            }
+        if (subject.getSubjectThemes() != null) {
+            list = subject.getSubjectThemes();
         }
 
         ListView listview = (ListView) findViewById(R.id.createsubject3_list);

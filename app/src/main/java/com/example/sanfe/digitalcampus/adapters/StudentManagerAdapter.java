@@ -64,7 +64,7 @@ public class StudentManagerAdapter extends BaseAdapter {
 
         image.setImageResource(R.mipmap.app_icon);
         name.setText(student.getStudentName());
-        age.setText("Edad: " + String.valueOf(student.getStudentAge()));
+       // age.setText("Edad: " + String.valueOf(student.getStudentAge()));
         degree.setText("Especialidad: " + student.getStudentCareer());
 
         button.setOnClickListener(new View.OnClickListener() {
