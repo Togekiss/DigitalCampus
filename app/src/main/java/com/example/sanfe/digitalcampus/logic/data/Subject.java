@@ -88,7 +88,12 @@ public class Subject implements Serializable{
     }
 
     public void removeSubjectStudent (Student student) {
-        this.subjectStudents.remove(student);
+        for (Student student1 : subjectStudents) {
+            if (student1.getStudentName().equals(student.getStudentName())) {
+                int sIndex = subjectStudents.indexOf(student1);
+                subjectStudents.remove(sIndex);
+            }
+        }
     }
 
 
