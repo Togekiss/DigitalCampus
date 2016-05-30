@@ -10,6 +10,10 @@ import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ShowStudentActivity extends AppCompatActivity {
 //Visualizar imagen, control de null
     @Override
@@ -37,7 +41,8 @@ public class ShowStudentActivity extends AppCompatActivity {
         image.setImageResource(R.mipmap.app_icon);
         name.setText(student.getStudentName());
         degree.setText(student.getStudentCareer());
-        birth.setText(student.getStudentBirthdate().toString());
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        birth.setText(df.format(student.getStudentBirthdate()));
         gender.setText(student.getStudentGender());
 
         for (String a : student.getStudentSubjects()) {

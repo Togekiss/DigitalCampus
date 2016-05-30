@@ -62,7 +62,7 @@ public class CreateStudentActivity extends AppCompatActivity {
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
 
-                                date.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                                date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                             }
                         }, year, month, day);
@@ -75,7 +75,7 @@ public class CreateStudentActivity extends AppCompatActivity {
         create_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+                DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                 Student student = new Student();
                 if (male.isChecked()) {
                     try {
