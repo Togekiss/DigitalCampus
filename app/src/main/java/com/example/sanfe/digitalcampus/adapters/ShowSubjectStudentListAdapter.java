@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.logic.data.Student;
+import com.example.sanfe.digitalcampus.logic.dataManager.BitmapManager;
 
 import java.util.ArrayList;
 
@@ -57,9 +58,9 @@ public class ShowSubjectStudentListAdapter extends BaseAdapter {
         TextView name = (TextView) row.findViewById(R.id.studentsshow_name);
         TextView degree = (TextView) row.findViewById(R.id.studentsshow_class);
 
-        if (student.getStudentImage().equals("")) image.setImageResource(R.mipmap.app_icon);
+        if (student.getStudentImage().equals("")) image.setImageResource(R.drawable.ic_account_box_black_48dp);
         else {
-            image.setImageBitmap(BitmapFactory.decodeFile(student.getStudentImage()));
+            image.setImageBitmap(BitmapManager.resizeBitmap(student.getStudentImage()));
         }
         name.setText(student.getStudentName());
         degree.setText(student.getStudentCareer());

@@ -37,7 +37,8 @@ import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.activities.Show.ShowStudentActivity;
 import com.example.sanfe.digitalcampus.activities.Managers.StudentManagerActivity;
-import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataManager.BitmapManager;
+import com.example.sanfe.digitalcampus.logic.dataManager.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 
@@ -202,12 +203,12 @@ public class CreateStudentActivity extends AppCompatActivity {
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
-                Log.d("image", imgDecodableString);
                 cursor.close();
-                ImageView im = (ImageView) findViewById(R.id.createstudent_image);
 
+
+                ImageView im = (ImageView) findViewById(R.id.createstudent_image);
                 // Set the Image in ImageView after decoding the String
-                im.setImageBitmap(BitmapFactory.decodeFile(imgDecodableString));
+                im.setImageBitmap(BitmapManager.resizeBitmap(imgDecodableString));
 
 
             } else {

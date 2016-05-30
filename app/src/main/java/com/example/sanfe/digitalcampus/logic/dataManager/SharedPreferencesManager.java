@@ -1,8 +1,7 @@
-package com.example.sanfe.digitalcampus.logic.dataLoader;
+package com.example.sanfe.digitalcampus.logic.dataManager;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
@@ -14,8 +13,6 @@ import com.example.sanfe.digitalcampus.logic.data.Subject;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 

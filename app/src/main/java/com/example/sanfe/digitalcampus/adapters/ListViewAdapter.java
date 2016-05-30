@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,7 +61,7 @@ public class ListViewAdapter extends BaseAdapter {
         ImageView image = (ImageView) row.findViewById(R.id.subjectmanager_image);
         TextView title = (TextView) row.findViewById(R.id.subjectmanager_title);
         TextView description = (TextView) row.findViewById(R.id.subjectmanager_text);
-        Button button = (Button) row.findViewById(R.id.subjectmanager_button);
+        ImageButton button = (ImageButton) row.findViewById(R.id.subjectmanager_button);
 
         image.setImageResource(subject.getSubjectImage());
         title.setText(subject.getSubjectTitle());

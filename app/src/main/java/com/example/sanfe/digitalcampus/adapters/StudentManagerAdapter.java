@@ -7,11 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.logic.data.Student;
+import com.example.sanfe.digitalcampus.logic.dataManager.BitmapManager;
 import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
 import java.text.DateFormat;
@@ -63,10 +65,10 @@ public class StudentManagerAdapter extends BaseAdapter {
         TextView name = (TextView) row.findViewById(R.id.studentmanager_name);
         TextView age = (TextView) row.findViewById(R.id.studentmanager_age);
         TextView degree = (TextView) row.findViewById(R.id.studentmanager_class);
-        Button button = (Button) row.findViewById(R.id.studentmanager_button);
-        if (student.getStudentImage().equals("")) image.setImageResource(R.mipmap.app_icon);
+        ImageButton button = (ImageButton) row.findViewById(R.id.studentmanager_button);
+        if (student.getStudentImage().equals("")) image.setImageResource(R.drawable.ic_account_box_black_48dp);
         else {
-            image.setImageBitmap(BitmapFactory.decodeFile(student.getStudentImage()));
+            image.setImageBitmap(BitmapManager.resizeBitmap(student.getStudentImage()));
         }
         name.setText(student.getStudentName());
         age.setText("Edad: " + String.valueOf(student.getStudentAge()));

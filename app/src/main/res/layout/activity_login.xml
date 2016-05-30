@@ -33,7 +33,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_email"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionDone"
+            android:singleLine="true"/>
 
         <TextView
             android:id="@+id/text_password"
@@ -50,7 +52,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:layout_below="@id/text_password"/>
+            android:layout_below="@id/text_password"
+            android:imeOptions="actionDone"
+            android:singleLine="true"/>
 
 
     </RelativeLayout>
