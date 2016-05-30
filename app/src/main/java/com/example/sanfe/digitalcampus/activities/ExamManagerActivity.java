@@ -70,6 +70,8 @@ public class ExamManagerActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("  " + getResources().getString(R.string.app_name));
         getSupportActionBar().setSubtitle("   " + getResources().getString(R.string.exammanager_actionbar));
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -80,6 +82,9 @@ public class ExamManagerActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), CreateExamActivity.class);
                 startActivity(intent);
                 finish();
+                return true;
+            case android.R.id.home:
+                onBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

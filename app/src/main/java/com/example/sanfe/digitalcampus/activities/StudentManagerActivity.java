@@ -90,16 +90,20 @@ public class StudentManagerActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("  " + getResources().getString(R.string.app_name));
         getSupportActionBar().setSubtitle("   " + getResources().getString(R.string.studentmanager_actionbar));
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return super.onCreateOptionsMenu(menu);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
             case R.id.create_subject:
                 Intent intent = new Intent(getApplicationContext(), CreateStudentActivity.class);
                 startActivity(intent);
-                //poso finish, o s'hauria d'actualitzar la llista quan es tornes enrere
                 finish();
                 return true;
             default:

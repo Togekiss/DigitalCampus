@@ -54,8 +54,11 @@ public class SubjectManagerActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle extras = new Bundle();
                 Intent intent = new Intent(getApplicationContext(), ShowSubjectActivity.class);
-                intent.putExtra("SUBJECT", list.get(position));
+                extras.putSerializable("SUBJECT", list.get(position));
+                extras.putInt("POSITION", position);
+                intent.putExtras(extras);
                 startActivity(intent);
                 finish();
             }
@@ -102,9 +105,10 @@ public class SubjectManagerActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(d);
-
         getSupportActionBar().setTitle("  " + getResources().getString(R.string.app_name));
         getSupportActionBar().setSubtitle("   " + getResources().getString(R.string.subjectmanager_actionbar));
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -115,6 +119,9 @@ public class SubjectManagerActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), CreateSubject1Activity.class);
                 startActivity(intent);
                 finish();
+                return true;
+            case android.R.id.home:
+                onBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

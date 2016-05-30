@@ -3,8 +3,15 @@ package com.example.sanfe.digitalcampus.activities;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -105,6 +112,35 @@ public class CreateStudentActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.subjectmanager_actionbar, menu);
+
+        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.mipmap.app_icon);
+        Bitmap new_icon = MenuActivity.resizeBitmapImageFn(icon, 72);
+        Drawable d = new BitmapDrawable(getResources(), new_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(d);
+
+        getSupportActionBar().setTitle("  " + getResources().getString(R.string.app_name));
+        getSupportActionBar().setSubtitle("   " + getResources().getString(R.string.CreateStudent));
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void onBackPressed() {
