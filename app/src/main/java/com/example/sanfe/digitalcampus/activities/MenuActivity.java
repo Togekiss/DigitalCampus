@@ -35,15 +35,15 @@ public class MenuActivity  extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
-                    case 0:
-                        Intent intent1 = new Intent(getApplicationContext(), SubjectManagerActivity.class);
-                        startActivity(intent1);
-                        break;
+                    case 0: Intent intent1 = new Intent(getApplicationContext(), SubjectManagerActivity.class);
+                            startActivity(intent1);
+                            break;
                     case 1: Intent intent2 = new Intent(getApplicationContext(), StudentManagerActivity.class);
                             startActivity(intent2);
                             break;
-                    case 2:
-                        break;
+                    case 2: Intent intent3 = new Intent(getApplicationContext(), ExamManagerActivity.class);
+                            startActivity(intent3);
+                            break;
                     case 3:
 
                         SharedPreferencesManager.setRememberMe(false);
@@ -79,10 +79,16 @@ public class MenuActivity  extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.create_student:
+                Intent intent = new Intent(getApplicationContext(), CreateStudentActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.create_subject:
+                Intent intent2 = new Intent(getApplicationContext(), CreateSubject1Activity.class);
+                startActivity(intent2);
                 return true;
             case R.id.new_exam:
+                Intent intent3 = new Intent(getApplicationContext(), CreateExamActivity.class);
+                startActivity(intent3);
                 return true;
             case R.id.exit:
                 finish();

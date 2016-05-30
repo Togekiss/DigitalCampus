@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="classrooms_array">
-        <item>A1</item>
-        <item>A2</item>
-        <item>A3</item>
-        <item>B1</item>
-        <item>B2</item>
+        <item>Aula A1</item>
+        <item>Aula A2</item>
+        <item>Aula A3</item>
+        <item>Aula B1</item>
+        <item>Aula B2</item>
     </string-array>
 </resources>

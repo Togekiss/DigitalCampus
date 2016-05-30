@@ -12,6 +12,7 @@
     <string name="subjectmanager_text">Selecciona una asignatura</string>
     <string name="subjectmanager_actionbar">Gestión asignaturas</string>
     <string name="studentmanager_actionbar">Gestión alumnos</string>
+    <string name="exammanager_actionbar">Listado examenes</string>
     <string name="title_elimination">Confirmación de Eliminación</string>
     <string name="text_elimination">Quieres eliminar la asignatura? </string>
     <string name="text2_elimination">Quieres eliminar al alumno? </string>
@@ -41,6 +42,7 @@
     <string name="location">Aula</string>
     <string name="save">Guardar</string>
     <string name="PickaDate">Escoge una Fecha…</string>
+    <string name="PickaTime">Escoge una Hora…</string>
     <string name="select_students">Selecciona los alumnos inscritos</string>
     <string name="permissionDenied">No tienes permisos para acceder a la galería.</string>
     <string name="noImageSelected">Ninguna imagen seleccionada.</string>

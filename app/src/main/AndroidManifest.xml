@@ -50,8 +50,15 @@
         <activity
             android:name=".activities.ShowStudentActivity"
             android:screenOrientation="portrait"/>
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+        <activity
+            android:name=".activities.ExamManagerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.CreateExamActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.EditExamActivity"
+            android:screenOrientation="portrait"/>
     </application>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
