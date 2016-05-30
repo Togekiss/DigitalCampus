@@ -238,7 +238,7 @@ public class CreateStudentActivity extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.subjectmanager_actionbar, menu);
+        inflater.inflate(R.menu.sample_actionbar, menu);
 
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.mipmap.app_icon);
         Bitmap new_icon = MenuActivity.resizeBitmapImageFn(icon, 72);
