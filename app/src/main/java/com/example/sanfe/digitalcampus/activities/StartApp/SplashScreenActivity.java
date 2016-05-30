@@ -8,8 +8,8 @@ import android.util.Log;
 import android.widget.ProgressBar;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
-import com.example.sanfe.digitalcampus.logic.dataLoader.GsonManager;
+import com.example.sanfe.digitalcampus.logic.dataManager.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataManager.GsonManager;
 
 import java.util.Timer;
 import java.util.TimerTask;

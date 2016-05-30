@@ -22,7 +22,7 @@ import com.example.sanfe.digitalcampus.adapters.ListViewAdapter;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
-import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataManager.SharedPreferencesManager;
 
 import java.util.ArrayList;
 

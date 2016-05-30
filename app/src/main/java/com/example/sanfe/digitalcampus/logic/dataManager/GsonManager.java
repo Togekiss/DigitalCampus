@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.logic.dataLoader;
+package com.example.sanfe.digitalcampus.logic.dataManager;
 
 import android.content.res.AssetManager;
 import android.content.res.Resources;

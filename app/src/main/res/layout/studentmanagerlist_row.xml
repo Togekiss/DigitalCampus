@@ -6,25 +6,29 @@
     android:paddingTop="16dp"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
-    android:paddingBottom="5dp">
+    android:paddingBottom="5dp"
+    android:descendantFocusability="blocksDescendants">
 
     <ImageView
         android:id="@+id/studentmanager_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@mipmap/app_icon"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginRight="20dp"
+        android:scaleType="centerCrop"/>
+
 
     <TextView
         android:id="@+id/studentmanager_name"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:layout_toRightOf="@id/studentmanager_image"
         android:maxLines="1"
-        android:ellipsize="end"/>
+        android:ellipsize="end"
+        android:layout_toLeftOf="@+id/studentmanager_button"/>
 
     <TextView
         android:id="@+id/studentmanager_age"
@@ -35,7 +39,8 @@
         android:layout_toRightOf="@id/studentmanager_image"
         android:layout_below="@id/studentmanager_name"
         android:maxLines="1"
-        android:ellipsize="end"/>
+        android:ellipsize="end"
+        android:layout_toLeftOf="@+id/studentmanager_button"/>
 
     <TextView
         android:id="@+id/studentmanager_class"
@@ -46,15 +51,15 @@
         android:layout_toRightOf="@id/studentmanager_image"
         android:layout_below="@id/studentmanager_age"
         android:maxLines="1"
-        android:ellipsize="end"/>
+        android:ellipsize="end"
+        android:layout_toLeftOf="@+id/studentmanager_button"/>
 
-    <Button
-        android:id="@+id/studentmanager_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@id/studentmanager_button"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:focusable="false"
-        android:focusableInTouchMode="false"/>
+        android:src="@drawable/ic_delete_black_48dp"
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>

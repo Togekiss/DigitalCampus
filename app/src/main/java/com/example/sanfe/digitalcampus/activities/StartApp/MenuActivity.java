@@ -22,7 +22,7 @@ import com.example.sanfe.digitalcampus.activities.Managers.ExamManagerActivity;
 import com.example.sanfe.digitalcampus.activities.Managers.StudentManagerActivity;
 import com.example.sanfe.digitalcampus.activities.Managers.SubjectManagerActivity;
 import com.example.sanfe.digitalcampus.adapters.GridViewImageAdapter;
-import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataManager.SharedPreferencesManager;
 
 public class MenuActivity  extends AppCompatActivity {
 

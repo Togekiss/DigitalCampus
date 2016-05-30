@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.activities.Creators.CreateSubject2Activity;
 import com.example.sanfe.digitalcampus.logic.data.Student;
+import com.example.sanfe.digitalcampus.logic.dataManager.BitmapManager;
 
 import java.util.ArrayList;
 
@@ -55,7 +56,10 @@ public class StudentListAdapter extends BaseAdapter {
         TextView name = (TextView) row.findViewById(R.id.studentslist_name);
         final CheckBox checkbox = (CheckBox) row.findViewById(R.id.studentslist_checkbox);
 
-        image.setImageResource(R.mipmap.app_icon);
+        if (student.getStudentImage().equals("")) image.setImageResource(R.drawable.ic_account_box_black_48dp);
+        else {
+            image.setImageBitmap(BitmapManager.resizeBitmap(student.getStudentImage()));
+        }
         name.setText(student.getStudentName());
 
         try {

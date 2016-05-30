@@ -26,7 +26,7 @@ import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.logic.data.Exam;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
-import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataManager.SharedPreferencesManager;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

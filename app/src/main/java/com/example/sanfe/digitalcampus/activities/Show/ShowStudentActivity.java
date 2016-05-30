@@ -17,6 +17,7 @@ import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.activities.Managers.StudentManagerActivity;
 import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.logic.data.Student;
+import com.example.sanfe.digitalcampus.logic.dataManager.BitmapManager;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -45,9 +46,9 @@ public class ShowStudentActivity extends AppCompatActivity {
         TextView subjects = (TextView) findViewById(R.id.showstudent_list);
         String subject = new String();
 
-        if (student.getStudentImage().equals("")) image.setImageResource(R.mipmap.app_icon);
+        if (student.getStudentImage().equals("")) image.setImageResource(R.drawable.ic_account_box_black_48dp);
         else {
-            image.setImageBitmap(BitmapFactory.decodeFile(student.getStudentImage()));
+            image.setImageBitmap(BitmapManager.resizeBitmap(student.getStudentImage()));
         }
         name.setText(student.getStudentName());
         degree.setText(student.getStudentCareer());
@@ -65,7 +66,7 @@ public class ShowStudentActivity extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.subjectmanager_actionbar, menu);
+        inflater.inflate(R.menu.sample_actionbar, menu);
 
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.mipmap.app_icon);
         Bitmap new_icon = MenuActivity.resizeBitmapImageFn(icon, 72);

@@ -20,7 +20,7 @@ import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.activities.Managers.SubjectManagerActivity;
 import com.example.sanfe.digitalcampus.adapters.ThemesListAdapter;
-import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.logic.dataManager.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
