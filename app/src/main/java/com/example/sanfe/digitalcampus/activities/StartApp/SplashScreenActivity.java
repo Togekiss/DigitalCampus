@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.activities;
+package com.example.sanfe.digitalcampus.activities.StartApp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import android.util.Log;
 import android.widget.ProgressBar;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.dataLoader.GsonManager;
 

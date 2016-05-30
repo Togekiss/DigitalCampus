@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.activities;
+package com.example.sanfe.digitalcampus.activities.Creators;
 
 
 import android.app.DatePickerDialog;
@@ -21,6 +21,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.activities.Managers.ExamManagerActivity;
+import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.logic.data.Exam;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Subject;

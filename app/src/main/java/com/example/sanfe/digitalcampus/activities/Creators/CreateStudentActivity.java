@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.activities;
+package com.example.sanfe.digitalcampus.activities.Creators;
 
 
 import android.Manifest;
@@ -11,8 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -36,6 +34,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
+import com.example.sanfe.digitalcampus.activities.Show.ShowStudentActivity;
+import com.example.sanfe.digitalcampus.activities.Managers.StudentManagerActivity;
 import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;

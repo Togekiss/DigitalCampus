@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.activities;
+package com.example.sanfe.digitalcampus.activities.Managers;
 
 
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,6 +17,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.activities.Creators.CreateStudentActivity;
+import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
+import com.example.sanfe.digitalcampus.activities.Show.ShowStudentActivity;
 import com.example.sanfe.digitalcampus.adapters.StudentManagerAdapter;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;

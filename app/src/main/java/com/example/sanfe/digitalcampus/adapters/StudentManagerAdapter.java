@@ -14,6 +14,8 @@ import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class StudentManagerAdapter extends BaseAdapter {
@@ -67,7 +69,7 @@ public class StudentManagerAdapter extends BaseAdapter {
             image.setImageBitmap(BitmapFactory.decodeFile(student.getStudentImage()));
         }
         name.setText(student.getStudentName());
-       // age.setText("Edad: " + String.valueOf(student.getStudentAge()));
+        age.setText("Edad: " + String.valueOf(student.getStudentAge()));
         degree.setText("Especialidad: " + student.getStudentCareer());
 
         button.setOnClickListener(new View.OnClickListener() {

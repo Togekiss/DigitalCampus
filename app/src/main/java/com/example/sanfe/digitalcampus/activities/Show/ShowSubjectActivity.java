@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.activities;
+package com.example.sanfe.digitalcampus.activities.Show;
 
 
 import android.app.Activity;
@@ -20,6 +20,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.activities.Managers.SubjectManagerActivity;
+import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.adapters.ShowSubjectStudentListAdapter;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;

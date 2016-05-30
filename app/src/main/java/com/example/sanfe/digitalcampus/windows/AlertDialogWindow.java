@@ -3,12 +3,10 @@ package com.example.sanfe.digitalcampus.windows;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 
-import com.example.sanfe.digitalcampus.activities.ShowSubjectActivity;
-import com.example.sanfe.digitalcampus.activities.StudentManagerActivity;
-import com.example.sanfe.digitalcampus.activities.SubjectManagerActivity;
+import com.example.sanfe.digitalcampus.activities.Managers.StudentManagerActivity;
+import com.example.sanfe.digitalcampus.activities.Managers.SubjectManagerActivity;
 
 /**
  * Crea un missatge d'error amb el missatge especificat

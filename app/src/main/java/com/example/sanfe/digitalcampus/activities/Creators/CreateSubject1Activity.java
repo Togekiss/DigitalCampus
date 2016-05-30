@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.activities;
+package com.example.sanfe.digitalcampus.activities.Creators;
 
 
 import android.content.Intent;
@@ -16,10 +16,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.sanfe.digitalcampus.R;
-import com.example.sanfe.digitalcampus.logic.data.Singleton;
+import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
+import com.example.sanfe.digitalcampus.activities.Managers.SubjectManagerActivity;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
-
-import java.io.Serializable;
 
 public class CreateSubject1Activity extends AppCompatActivity {
 //Controlar que 2 assignatures no es diguin igual

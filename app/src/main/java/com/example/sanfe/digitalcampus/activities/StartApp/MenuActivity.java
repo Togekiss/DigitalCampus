@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.activities;
+package com.example.sanfe.digitalcampus.activities.StartApp;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,6 +15,12 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.activities.Creators.CreateExamActivity;
+import com.example.sanfe.digitalcampus.activities.Creators.CreateStudentActivity;
+import com.example.sanfe.digitalcampus.activities.Creators.CreateSubject1Activity;
+import com.example.sanfe.digitalcampus.activities.Managers.ExamManagerActivity;
+import com.example.sanfe.digitalcampus.activities.Managers.StudentManagerActivity;
+import com.example.sanfe.digitalcampus.activities.Managers.SubjectManagerActivity;
 import com.example.sanfe.digitalcampus.adapters.GridViewImageAdapter;
 import com.example.sanfe.digitalcampus.logic.dataLoader.SharedPreferencesManager;
 

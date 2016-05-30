@@ -1,4 +1,4 @@
-package com.example.sanfe.digitalcampus.activities;
+package com.example.sanfe.digitalcampus.activities.StartApp;
 
 import android.content.Context;
 import android.content.Intent;

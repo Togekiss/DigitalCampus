@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.SplashScreenActivity"
+            android:name=".activities.StartApp.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -20,44 +20,44 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".activities.StartApp.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
-            android:name=".activities.MenuActivity"
+            android:name=".activities.StartApp.MenuActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.SubjectManagerActivity"
+            android:name=".activities.Managers.SubjectManagerActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.CreateSubject1Activity"
+            android:name=".activities.Creators.CreateSubject1Activity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.CreateSubject2Activity"
+            android:name=".activities.Creators.CreateSubject2Activity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.CreateSubject3Activity"
+            android:name=".activities.Creators.CreateSubject3Activity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.ShowSubjectActivity"
+            android:name=".activities.Show.ShowSubjectActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.StudentManagerActivity"
+            android:name=".activities.Managers.StudentManagerActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.CreateStudentActivity"
+            android:name=".activities.Creators.CreateStudentActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.ShowStudentActivity"
+            android:name=".activities.Show.ShowStudentActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.ExamManagerActivity"
+            android:name=".activities.Managers.ExamManagerActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.CreateExamActivity"
+            android:name=".activities.Creators.CreateExamActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.EditExamActivity"
+            android:name=".activities.Creators.EditExamActivity"
             android:screenOrientation="portrait"/>
     </application>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
