@@ -3,7 +3,7 @@
     <string name="autentication">Autenticación</string>
     <string name="email">Email</string>
     <string name="password">Contraseña</string>
-    <string name="remember_me">Recuerdame la próxima vez</string>
+    <string name="remember_me">Recuérdame la próxima vez</string>
     <string name="enter_button">Entrar</string>
     <string name="exit">Salir</string>
     <string name="create_student">Crear Alumno</string>
@@ -42,4 +42,7 @@
     <string name="save">Guardar</string>
     <string name="PickaDate">Escoge una Fecha…</string>
     <string name="select_students">Selecciona los alumnos inscritos</string>
+    <string name="permissionDenied">No tienes permisos para acceder a la galería.</string>
+    <string name="noImageSelected">Ninguna imagen seleccionada.</string>
+    <string name="error">Ha habido un error.</string>
 </resources>

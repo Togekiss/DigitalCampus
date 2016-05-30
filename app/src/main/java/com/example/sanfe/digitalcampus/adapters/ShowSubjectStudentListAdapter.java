@@ -2,6 +2,7 @@ package com.example.sanfe.digitalcampus.adapters;
 
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,10 @@ public class ShowSubjectStudentListAdapter extends BaseAdapter {
         TextView name = (TextView) row.findViewById(R.id.studentsshow_name);
         TextView degree = (TextView) row.findViewById(R.id.studentsshow_class);
 
-        image.setImageResource(student.getStudentImage());
+        if (student.getStudentImage().equals("")) image.setImageResource(R.mipmap.app_icon);
+        else {
+            image.setImageBitmap(BitmapFactory.decodeFile(student.getStudentImage()));
+        }
         name.setText(student.getStudentName());
         degree.setText(student.getStudentCareer());
 

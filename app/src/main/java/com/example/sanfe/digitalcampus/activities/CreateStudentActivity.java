@@ -3,15 +3,18 @@ package com.example.sanfe.digitalcampus.activities;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -57,6 +60,7 @@ public class CreateStudentActivity extends AppCompatActivity {
         final ImageView image = (ImageView) findViewById(R.id.createstudent_image);
         final Button image_button = (Button) findViewById(R.id.createstudent_image_button);
         final Button create_button = (Button) findViewById(R.id.createstudent_create_button);
+        imgDecodableString = "";
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.careers_array, android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
@@ -90,23 +94,29 @@ public class CreateStudentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (ContextCompat.checkSelfPermission(getApplicationContext(),
                         Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(CreateStudentActivity.this, "You had permission", Toast.LENGTH_SHORT).show();
+
+                    Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
+
                 }
                 else if (Build.VERSION.SDK_INT >= 23) {
-                    Toast.makeText(CreateStudentActivity.this, "You need to ask permission now", Toast.LENGTH_SHORT).show();
                     requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},
                             REQUEST_CODE_ASK_PERMISSIONS);
                     return;
                 } else {
-                    Toast.makeText(CreateStudentActivity.this, "Can't reach gallery", Toast.LENGTH_SHORT).show();
+                    AlertDialog alertDialog = new AlertDialog.Builder(CreateStudentActivity.this).create();
+                    alertDialog.setMessage(getResources().getString(R.string.permissionDenied));
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
 
                 }
 
-                // Create intent to Open Image applications like Gallery, Google Photos
-                //Intent galleryIntent = new Intent(Intent.ACTION_PICK,
-                      //  android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                // Start the Intent
-                //startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
             }
         });
 
@@ -120,9 +130,9 @@ public class CreateStudentActivity extends AppCompatActivity {
                 if (male.isChecked()) {
                     try {
                         student = new Student(df.parse(date.getText().toString()), spinner.getSelectedItem().toString(),
-                        "Hombre", R.mipmap.app_icon, name.getText().toString(), new ArrayList<String>());
+                        "Hombre", imgDecodableString, name.getText().toString(), new ArrayList<String>());
                         Singleton.getInstance().addStudent(student);
-                        //SharedPreferencesManager.updateStudentsJSON();
+                        SharedPreferencesManager.updateStudentsJSON();
                         Intent intent = new Intent (getApplicationContext(), ShowStudentActivity.class);
                         intent.putExtra("STUDENT", student);
                         startActivity(intent);
@@ -132,7 +142,7 @@ public class CreateStudentActivity extends AppCompatActivity {
                 else if (female.isChecked()){
                     try {
                         student = new Student(df.parse(date.getText().toString()), spinner.getSelectedItem().toString(),
-                                "Mujer", R.mipmap.app_icon, name.getText().toString(), new ArrayList<String>());
+                                "Mujer", imgDecodableString, name.getText().toString(), new ArrayList<String>());
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
@@ -152,8 +162,9 @@ public class CreateStudentActivity extends AppCompatActivity {
         switch (requestCode) {
             case REQUEST_CODE_ASK_PERMISSIONS:
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // Permission Granted
-                    Toast.makeText(CreateStudentActivity.this, "Permissions granted", Toast.LENGTH_SHORT).show();
+                    Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
                 } else {
                     // Permission Denied
                     Toast.makeText(CreateStudentActivity.this, "Permissions Denied", Toast.LENGTH_SHORT)
@@ -183,19 +194,36 @@ public class CreateStudentActivity extends AppCompatActivity {
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
+                Log.d("image", imgDecodableString);
                 cursor.close();
                 ImageView im = (ImageView) findViewById(R.id.createstudent_image);
+
                 // Set the Image in ImageView after decoding the String
                 im.setImageBitmap(BitmapFactory.decodeFile(imgDecodableString));
 
+
             } else {
-                Toast.makeText(this, "You haven't picked Image",
-                        Toast.LENGTH_LONG).show();
+                AlertDialog alertDialog = new AlertDialog.Builder(CreateStudentActivity.this).create();
+                alertDialog.setMessage(getResources().getString(R.string.noImageSelected));
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
             }
         } catch (Exception e) {
-            Log.d("loading", e.getMessage());
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
-                    .show();
+            Log.d("error", e.getMessage());
+            AlertDialog alertDialog = new AlertDialog.Builder(CreateStudentActivity.this).create();
+            alertDialog.setMessage(getResources().getString(R.string.error));
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
         }
 
     }

@@ -1,6 +1,7 @@
 package com.example.sanfe.digitalcampus.activities;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -38,7 +39,10 @@ public class ShowStudentActivity extends AppCompatActivity {
         TextView subjects = (TextView) findViewById(R.id.showstudent_list);
         String subject = new String();
 
-        image.setImageResource(R.mipmap.app_icon);
+        if (student.getStudentImage().equals("")) image.setImageResource(R.mipmap.app_icon);
+        else {
+            image.setImageBitmap(BitmapFactory.decodeFile(student.getStudentImage()));
+        }
         name.setText(student.getStudentName());
         degree.setText(student.getStudentCareer());
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");

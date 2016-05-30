@@ -11,10 +11,11 @@ public class Student implements Serializable{
     private Date studentBirthdate;
     private String studentCareer;
     private String  studentGender;
-    private int studentImage;
+    private String studentImage;
+
     private ArrayList<String> studentSubjects;
 
-    public Student(Date studentBirthdate, String studentCareer, String studentGender, int studentImage, String studentName, ArrayList<String> studentSubjects) {
+    public Student(Date studentBirthdate, String studentCareer, String studentGender, String studentImage, String studentName, ArrayList<String> studentSubjects) {
         this.studentBirthdate = studentBirthdate;
         this.studentCareer = studentCareer;
         this.studentGender = studentGender;
@@ -23,7 +24,7 @@ public class Student implements Serializable{
         this.studentSubjects = studentSubjects;
     }
 
-    public Student (int studentImage, String studentName) {
+    public Student (String studentImage, String studentName) {
         this.studentImage = studentImage;
         this.studentName = studentName;
     }
@@ -61,11 +62,11 @@ public class Student implements Serializable{
         this.studentGender = studentGender;
     }
 
-    public int getStudentImage() {
+    public String getStudentImage() {
         return studentImage;
     }
 
-    public void setStudentImage(int studentImage) {
+    public void setStudentImage(String studentImage) {
         this.studentImage = studentImage;
     }
 

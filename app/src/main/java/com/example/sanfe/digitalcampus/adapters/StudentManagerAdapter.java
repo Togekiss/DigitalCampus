@@ -1,6 +1,7 @@
 package com.example.sanfe.digitalcampus.adapters;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,8 +62,10 @@ public class StudentManagerAdapter extends BaseAdapter {
         TextView age = (TextView) row.findViewById(R.id.studentmanager_age);
         TextView degree = (TextView) row.findViewById(R.id.studentmanager_class);
         Button button = (Button) row.findViewById(R.id.studentmanager_button);
-
-        image.setImageResource(R.mipmap.app_icon);
+        if (student.getStudentImage().equals("")) image.setImageResource(R.mipmap.app_icon);
+        else {
+            image.setImageBitmap(BitmapFactory.decodeFile(student.getStudentImage()));
+        }
         name.setText(student.getStudentName());
        // age.setText("Edad: " + String.valueOf(student.getStudentAge()));
         degree.setText("Especialidad: " + student.getStudentCareer());
