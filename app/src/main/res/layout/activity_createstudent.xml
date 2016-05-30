@@ -8,7 +8,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:focusableInTouchMode="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -20,7 +21,8 @@
             android:id="@+id/createstudent_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"/>
+            android:imeOptions="actionDone"
+            android:singleLine="true"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -98,7 +100,7 @@
                 android:src="@mipmap/app_icon"/>
 
             <Button
-                android:id="@+id/createstudent_button"
+                android:id="@+id/createstudent_image_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/select_photo"
