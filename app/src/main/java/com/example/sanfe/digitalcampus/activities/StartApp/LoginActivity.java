@@ -16,12 +16,12 @@ import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
 public class LoginActivity  extends AppCompatActivity {
 
-    public static final String TITLE = "Ha habido un error !";
     public static final String EMAIL = "administrador@salleurl.edu";
     public static final String PASSWORD = "123qwe";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final String TITLE = getResources().getString(R.string.error);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -36,19 +36,19 @@ public class LoginActivity  extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (!isEmailValid(email.getText().toString())) {
-                    AlertDialogWindow.errorMessage(context, TITLE, "El formato del email no es correcto.");
+                    AlertDialogWindow.errorMessage(context, TITLE, getResources().getString(R.string.badEmailFormat));
                 }
                 else {
                     if (password.getText().toString().length() < 6) {
-                        AlertDialogWindow.errorMessage(context, TITLE, "La contraseña debe contener 6 carácteres.");
+                        AlertDialogWindow.errorMessage(context, TITLE, getResources().getString(R.string.shortPassword));
                     }
                     else {
                         if (!email.getText().toString().equals(EMAIL)) {
-                            AlertDialogWindow.errorMessage(context, TITLE, "El email introducido no esta registrado.");
+                            AlertDialogWindow.errorMessage(context, TITLE, getResources().getString(R.string.unregisteredEmail));
                         }
                         else {
                             if (!password.getText().toString().equals(PASSWORD)) {
-                                AlertDialogWindow.errorMessage(context, TITLE, "La contraseña introducida es incorrecta");
+                                AlertDialogWindow.errorMessage(context, TITLE, getResources().getString(R.string.incorrectPassword));
                             }
                             else {
                                 if (remember_me.isChecked()) {

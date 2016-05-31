@@ -6,6 +6,16 @@
     <string name="remember_me">Recuérdame la próxima vez</string>
     <string name="enter_button">Entrar</string>
     <string name="exit">Salir</string>
+    <string name="badEmailFormat">El formato del email no es correcto.</string>
+    <string name="shortPassword">La contraseña debe contener 6 carácteres.</string>
+    <string name="unregisteredEmail">El email introducido no esta registrado.</string>
+    <string name="incorrectPassword">La contraseña introducida es incorrecta.</string>
+    <string name="manageSubjects">Gestionar
+Asignaturas</string>
+    <string name="manageStudents">Gestionar
+Alumnado</string>
+    <string name="exams">Exámenes</string>
+    <string name="logout">Salir</string>
     <string name="create_student">Crear Alumno</string>
     <string name="create_subject">Crear Asignatura</string>
     <string name="new_exam">Nuevo Examen</string>
