@@ -67,7 +67,7 @@ public class CreateSubject3Activity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (textfield.getText().toString().trim().isEmpty()) AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "El título esta vacío!");
+                if (textfield.getText().toString().trim().isEmpty()) AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "El título esta vacío!");
                 else list.add(textfield.getText().toString());
                 textfield.setText("");
                 adapter.notifyDataSetChanged();
@@ -101,7 +101,7 @@ public class CreateSubject3Activity extends AppCompatActivity {
                     subject.setSubjectThemes(list);
                 }
                 if (list.isEmpty())
-                    AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "Ha de introducir al menos 1 tema!");
+                    AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "Ha de introducir al menos 1 tema!");
                 else {
                     addNewSubjectToSystem(subject);
                     Intent intent = new Intent(getApplicationContext(), SubjectManagerActivity.class);

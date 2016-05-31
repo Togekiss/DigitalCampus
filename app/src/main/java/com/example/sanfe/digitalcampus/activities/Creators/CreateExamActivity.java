@@ -123,7 +123,7 @@ public class CreateExamActivity extends AppCompatActivity {
                     cal.set(Calendar.MONTH, Integer.parseInt(aux[1]) - 1);
                     cal.set(Calendar.YEAR, Integer.parseInt(aux[2]));
 
-                    if (cal.getTime().getTime() > 0)  AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "La fecha y/o la hora no són correctas!");
+                    if (cal.getTime().getTime() > 0)  AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "La fecha y/o la hora no són correctas!");
                     else {
                         Exam exam = new Exam(degree.getSelectedItem().toString(), classroom.getSelectedItem().toString(), cal.getTime(), subject.getSelectedItem().toString());
 
@@ -135,7 +135,7 @@ public class CreateExamActivity extends AppCompatActivity {
                     }
 
                 }catch (Exception e) {
-                    AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "La fecha y/o la hora no són correctas!");
+                    AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "La fecha y/o la hora no són correctas!");
                 }
             }
         });

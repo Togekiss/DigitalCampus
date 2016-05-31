@@ -100,7 +100,7 @@ public class CreateSubject2Activity extends AppCompatActivity {
                        subject.setSubjectStudents(students);
                    }catch (Exception e){}
                 }
-                if (students.isEmpty())  AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "Selecciona al menos un alumno!");
+                if (students.isEmpty())  AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "Selecciona al menos un alumno!");
                 else {
                     Intent intent = new Intent(getApplicationContext(), CreateSubject3Activity.class);
                     intent.putExtra("SUBJECT2", subject);

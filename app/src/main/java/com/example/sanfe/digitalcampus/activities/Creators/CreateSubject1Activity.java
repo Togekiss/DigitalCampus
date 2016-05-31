@@ -54,9 +54,9 @@ public class CreateSubject1Activity extends AppCompatActivity {
         continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isSubjectValid(title.getText().toString())) AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "El título no es correcto o ya existe!");
+                if (!isSubjectValid(title.getText().toString())) AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "El título no es correcto o ya existe!");
                 else if (description.getText().toString().length() > 200 || description.getText().toString().trim().isEmpty())
-                    AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "La descripción supera los 200 caràcteres o esta vacia!");
+                    AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "La descripción supera los 200 caràcteres o esta vacia!");
                 else {
                     subject.setSubjectTitle(title.getText().toString());
                     subject.setSubjectDescription(description.getText().toString());

@@ -138,10 +138,10 @@ public class CreateStudentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                 Student student = new Student();
-                if (!isNameValid(name.getText().toString())) AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "El nombre no es correcto o ya existe!");
+                if (!isNameValid(name.getText().toString())) AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "El nombre no es correcto o ya existe!");
                 else {
                     try {
-                        if (Student.StudentAge(df.parse(date.getText().toString())) < 18)  AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "No eres mayor de edad!");
+                        if (Student.StudentAge(df.parse(date.getText().toString())) < 18)  AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "No eres mayor de edad!");
                         else {
                             if (male.isChecked()) {
                                 try {
@@ -169,11 +169,11 @@ public class CreateStudentActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             } else {
-                                AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "No has seleccionado género!");
+                                AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "No has seleccionado género!");
                             }
                         }
                     } catch (ParseException e) {
-                        AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "La fecha no es correcta!");
+                        AlertDialogWindow.errorMessage(context, getResources().getString(R.string.error), "La fecha no es correcta!");
                     }
                 }
             }
