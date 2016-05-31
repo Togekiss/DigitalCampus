@@ -72,7 +72,7 @@ public class ShowSubjectActivity extends AppCompatActivity {
 
             themes.setText(themes_text);
             list = subject.getSubjectStudents();
-            adapter = new ShowSubjectStudentListAdapter(this, list);
+            adapter = new ShowSubjectStudentListAdapter(activity, this, list);
             listview.setAdapter(adapter);
             setListViewHeightBasedOnItems(listview);
         }

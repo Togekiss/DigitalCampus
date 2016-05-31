@@ -24,10 +24,12 @@ import java.text.SimpleDateFormat;
 
 public class ShowStudentActivity extends AppCompatActivity {
 //Visualizar imagen, control de null
+    private int from;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showstudent);
+        from = -1;
 
         Intent intent = getIntent();
         final Bundle bundle = intent.getExtras();
@@ -35,7 +37,8 @@ public class ShowStudentActivity extends AppCompatActivity {
         Student student = new Student();
 
         if (bundle != null) {
-            student = (Student) bundle.get("STUDENT");
+            student = (Student) bundle.getSerializable("STUDENT");
+            from = bundle.getInt("FROM");
         }
 
         ImageView image = (ImageView) findViewById(R.id.showstudent_image);
@@ -94,7 +97,12 @@ public class ShowStudentActivity extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        this.startActivity(new Intent(ShowStudentActivity.this, StudentManagerActivity.class));
-        finish();
+        if (from == 0) {
+            this.startActivity(new Intent(ShowStudentActivity.this, StudentManagerActivity.class));
+            finish();
+        }
+        else if (from == 1) {
+            finish();
+        }
     }
 }
