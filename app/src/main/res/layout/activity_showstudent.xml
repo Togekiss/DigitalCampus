@@ -1,81 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp">
 
-        <ImageView
-            android:id="@+id/showstudent_image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@mipmap/ic_launcher"
-            android:scaleType="centerCrop"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/showstudent_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"
+                android:background="@null" />
+
+
+            <TextView
+                android:id="@+id/showstudent_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/showstudent_image"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/showstudent_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/showstudent_image"
+                android:layout_below="@id/showstudent_name"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/showstudent_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/showstudent_image"
+                android:layout_below="@id/showstudent_class"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/showstudent_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/showstudent_image"
+                android:layout_below="@id/showstudent_date"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"/>
+
+        </RelativeLayout>
 
         <TextView
-            android:id="@+id/showstudent_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
+            android:text="@string/subjects"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_toRightOf="@id/showstudent_image"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="40dp"/>
 
         <TextView
-            android:id="@+id/showstudent_class"
+            android:id="@+id/showstudent_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="20sp"
-            android:layout_toRightOf="@id/showstudent_image"
-            android:layout_below="@id/showstudent_name"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:text="@string/birth"
+            android:textSize="20sp"/>
 
-        <TextView
-            android:id="@+id/showstudent_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="20sp"
-            android:layout_toRightOf="@id/showstudent_image"
-            android:layout_below="@id/showstudent_class"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"/>
+    </LinearLayout>
 
-        <TextView
-            android:id="@+id/showstudent_gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="20sp"
-            android:layout_toRightOf="@id/showstudent_image"
-            android:layout_below="@id/showstudent_date"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"/>
+    <ImageView
+        android:id="@+id/expanded_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
 
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/subjects"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"/>
-
-    <TextView
-        android:id="@+id/showstudent_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/birth"
-        android:textSize="20sp"/>
-
-</LinearLayout>
+</FrameLayout>
