@@ -28,4 +28,25 @@ public class BitmapManager {
 
         return bm;
     }
+    public static Bitmap resizeForFullScreen(String path) {
+
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(path, options);
+
+
+        if (options.outHeight > 2048 || options.outWidth > 2048) {
+            if (options.outHeight > 8192 || options.outWidth > 8192) {
+                options.inSampleSize = 4;
+            }
+            else options.inSampleSize = 2;
+        }
+
+
+        options.inJustDecodeBounds = false;
+        Bitmap bm = BitmapFactory.decodeFile(path, options);
+
+        return bm;
+    }
+
 }
