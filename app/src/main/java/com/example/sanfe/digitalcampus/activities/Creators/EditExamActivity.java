@@ -107,13 +107,13 @@ public class EditExamActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<CharSequence> adapterDegree = ArrayAdapter.createFromResource(this, R.array.careers_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterDegree = ArrayAdapter.createFromResource(this, R.array.careers_array, android.R.layout.simple_spinner_dropdown_item);
         degree.setAdapter(adapterDegree);
 
-        ArrayAdapter<String> adapterSubject = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
+        ArrayAdapter<String> adapterSubject = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, list);
         subject.setAdapter(adapterSubject);
 
-        ArrayAdapter<CharSequence> adapterClassroom = ArrayAdapter.createFromResource(this, R.array.classrooms_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterClassroom = ArrayAdapter.createFromResource(this, R.array.classrooms_array, android.R.layout.simple_spinner_dropdown_item);
         classroom.setAdapter(adapterClassroom);
 
         if (bundle != null) {

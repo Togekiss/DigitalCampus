@@ -7,13 +7,11 @@
     <string name="enter_button">Entrar</string>
     <string name="exit">Salir</string>
     <string name="badEmailFormat">El formato del email no es correcto.</string>
-    <string name="shortPassword">La contraseña debe contener 6 carácteres.</string>
-    <string name="unregisteredEmail">El email introducido no esta registrado.</string>
-    <string name="incorrectPassword">La contraseña introducida es incorrecta.</string>
-    <string name="manageSubjects">Gestionar
-Asignaturas</string>
-    <string name="manageStudents">Gestionar
-Alumnado</string>
+    <string name="shortPassword">Email y/o contraseña incorrectos.</string>
+    <string name="unregisteredEmail">Email y/o contraseña incorrectos.</string>
+    <string name="incorrectPassword">Email y/o contraseña incorrectos.</string>
+    <string name="manageSubjects">Gestionar\nAsignaturas</string>
+    <string name="manageStudents">Gestionar\nAlumnado</string>
     <string name="exams">Exámenes</string>
     <string name="logout">Salir</string>
     <string name="create_student">Crear Alumno</string>
@@ -43,7 +41,7 @@ Alumnado</string>
     <string name="male">Masculino</string>
     <string name="female">Femenino</string>
     <string name="photo">Foto</string>
-    <string name="select_photo">Seleccionar Foto</string>
+    <string name="select_photo">Seleccionar foto</string>
     <string name="create">Crear ></string>
     <string name="subjects">ASIGNATURAS</string>
     <string name="date">Fecha del examen</string>
@@ -51,8 +49,8 @@ Alumnado</string>
     <string name="subject">Asignatura</string>
     <string name="location">Aula</string>
     <string name="save">Guardar</string>
-    <string name="PickaDate">Escoge una Fecha…</string>
-    <string name="PickaTime">Escoge una Hora…</string>
+    <string name="PickaDate">Escoge una fecha…</string>
+    <string name="PickaTime">Escoge una hora…</string>
     <string name="badDateTime">La fecha y/o la hora no son correctas.</string>
     <string name="select_students">Selecciona los alumnos inscritos</string>
     <string name="permissionDenied">No tienes permisos para acceder a la galería.</string>

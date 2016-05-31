@@ -73,7 +73,7 @@ public class CreateStudentActivity extends AppCompatActivity {
         final Button create_button = (Button) findViewById(R.id.createstudent_create_button);
         imgDecodableString = "";
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.careers_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.careers_array, android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
         date.setOnClickListener(new View.OnClickListener() {
