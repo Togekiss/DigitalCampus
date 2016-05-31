@@ -33,7 +33,9 @@ public class MenuActivity  extends AppCompatActivity {
 
         Integer [] images = {R.drawable.ic_book_black_48dp, R.drawable.ic_account_box_black_48dp,
                 R.drawable.ic_description_black_48dp, R.drawable.ic_cancel_black_48dp};
-        String [] descriptions = {"  Gestionar\nAsignaturas", " Gestionar Alumnado", " Examenes", "     Salir"};
+        String [] descriptions = {getResources().getString(R.string.manageSubjects),
+                getResources().getString(R.string.manageStudents), getResources().getString(R.string.exams),
+                getResources().getString(R.string.logout)};
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new GridViewImageAdapter(this, images, descriptions));
