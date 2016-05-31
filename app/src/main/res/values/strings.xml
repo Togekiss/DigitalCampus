@@ -53,6 +53,7 @@ Alumnado</string>
     <string name="save">Guardar</string>
     <string name="PickaDate">Escoge una Fecha…</string>
     <string name="PickaTime">Escoge una Hora…</string>
+    <string name="badDateTime">La fecha y/o la hora no son correctas.</string>
     <string name="select_students">Selecciona los alumnos inscritos</string>
     <string name="permissionDenied">No tienes permisos para acceder a la galería.</string>
     <string name="noImageSelected">Ninguna imagen seleccionada.</string>
