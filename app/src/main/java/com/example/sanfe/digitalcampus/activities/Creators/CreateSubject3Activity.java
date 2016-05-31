@@ -1,6 +1,7 @@
 package com.example.sanfe.digitalcampus.activities.Creators;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.activities.StartApp.LoginActivity;
 import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.activities.Managers.SubjectManagerActivity;
 import com.example.sanfe.digitalcampus.adapters.ThemesListAdapter;
@@ -24,19 +26,20 @@ import com.example.sanfe.digitalcampus.logic.dataManager.SharedPreferencesManage
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
+import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
 import java.util.ArrayList;
 
 public class CreateSubject3Activity extends AppCompatActivity {
     private ArrayList<String> list;
     private ThemesListAdapter adapter;
-//Per temes d'usabilitat considerar sempre mostrar l'ultim afegit
-    //Control·lar noms de temes massa llargs
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createsubject3);
 
+        final Context context = this;
         Intent intent = getIntent();
         final Bundle bundle = intent.getExtras();
         Subject subject = new Subject();
@@ -64,7 +67,8 @@ public class CreateSubject3Activity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                list.add(textfield.getText().toString());
+                if (textfield.getText().toString().trim().isEmpty()) AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "El título esta vacío!");
+                else list.add(textfield.getText().toString());
                 textfield.setText("");
                 adapter.notifyDataSetChanged();
             }
@@ -96,11 +100,14 @@ public class CreateSubject3Activity extends AppCompatActivity {
                     subject = (Subject) bundle.get("SUBJECT2");
                     subject.setSubjectThemes(list);
                 }
-
-                addNewSubjectToSystem(subject);
-                Intent intent = new Intent(getApplicationContext(), SubjectManagerActivity.class);
-                startActivity(intent);
-                finish();
+                if (list.isEmpty())
+                    AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "Ha de introducir al menos 1 tema!");
+                else {
+                    addNewSubjectToSystem(subject);
+                    Intent intent = new Intent(getApplicationContext(), SubjectManagerActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 

@@ -1,6 +1,7 @@
 package com.example.sanfe.digitalcampus.activities.Creators;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,14 +17,15 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.activities.StartApp.LoginActivity;
 import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.activities.Managers.SubjectManagerActivity;
+import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
+import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
 public class CreateSubject1Activity extends AppCompatActivity {
-//Controlar que 2 assignatures no es diguin igual
-//Falta ActionBar i Hints
-    //Max caràcters de descripció?
+
     public static Subject subject;
 
     @Override
@@ -34,6 +36,7 @@ public class CreateSubject1Activity extends AppCompatActivity {
         Intent intent = getIntent();
         final Bundle bundle = intent.getExtras();
 
+        final Context context = this;
         final EditText title = (EditText) findViewById(R.id.createsubject1_titlefield);
         final EditText description = (EditText) findViewById(R.id.createsubject1_descriptionfield);
         Button continue_button = (Button) findViewById(R.id.createsubject1_nextbutton);
@@ -51,12 +54,17 @@ public class CreateSubject1Activity extends AppCompatActivity {
         continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                subject.setSubjectTitle(title.getText().toString());
-                subject.setSubjectDescription(description.getText().toString());
-                Intent intent = new Intent (getApplicationContext(), CreateSubject2Activity.class);
-                intent.putExtra("SUBJECT1", subject);
-                startActivity(intent);
-                finish();
+                if (!isSubjectValid(title.getText().toString())) AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "El título no es correcto o ya existe!");
+                else if (description.getText().toString().length() > 200 || description.getText().toString().trim().isEmpty())
+                    AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "La descripción supera los 200 caràcteres o esta vacia!");
+                else {
+                    subject.setSubjectTitle(title.getText().toString());
+                    subject.setSubjectDescription(description.getText().toString());
+                    Intent intent = new Intent(getApplicationContext(), CreateSubject2Activity.class);
+                    intent.putExtra("SUBJECT1", subject);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }
@@ -92,5 +100,15 @@ public class CreateSubject1Activity extends AppCompatActivity {
     public void onBackPressed() {
         this.startActivity(new Intent(CreateSubject1Activity.this, SubjectManagerActivity.class));
         finish();
+    }
+
+    public boolean isSubjectValid (String title) {
+        for (Subject subject : Singleton.getInstance().getSubjectList()) {
+            if (subject.getSubjectTitle().equals(title)) {
+                return false;
+            }
+        }
+        if (title.trim().isEmpty()) return false;
+        return true;
     }
 }
