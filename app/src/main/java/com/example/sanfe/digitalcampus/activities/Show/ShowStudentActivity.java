@@ -149,7 +149,7 @@ public class ShowStudentActivity extends AppCompatActivity {
         //expandedImageView.setImageResource(imageResId);
         if (path.equals("")) expandedImageView.setImageResource(R.drawable.ic_account_box_black_48dp);
         else {
-            expandedImageView.setImageBitmap(BitmapFactory.decodeFile(path));
+            expandedImageView.setImageBitmap(BitmapManager.resizeForFullScreen(path));
         }
 
         // Calculate the starting and ending bounds for the zoomed-in image.
