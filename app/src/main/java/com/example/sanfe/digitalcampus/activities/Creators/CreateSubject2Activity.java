@@ -1,5 +1,6 @@
 package com.example.sanfe.digitalcampus.activities.Creators;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,12 +16,14 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.activities.StartApp.LoginActivity;
 import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.activities.Managers.SubjectManagerActivity;
 import com.example.sanfe.digitalcampus.adapters.StudentListAdapter;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
+import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
 import java.util.ArrayList;
 
@@ -45,6 +48,7 @@ public class CreateSubject2Activity extends AppCompatActivity {
         list = Singleton.getInstance().getStudentList();
         checkboxlist = new boolean[list.size()];
 
+        final Context context = this;
         subject = new Subject();
 
         if (bundle != null) {
@@ -96,10 +100,13 @@ public class CreateSubject2Activity extends AppCompatActivity {
                        subject.setSubjectStudents(students);
                    }catch (Exception e){}
                 }
-                Intent intent = new Intent (getApplicationContext(), CreateSubject3Activity.class);
-                intent.putExtra("SUBJECT2", subject);
-                startActivity(intent);
-                finish();
+                if (students.isEmpty())  AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "Selecciona al menos un alumno!");
+                else {
+                    Intent intent = new Intent(getApplicationContext(), CreateSubject3Activity.class);
+                    intent.putExtra("SUBJECT2", subject);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }

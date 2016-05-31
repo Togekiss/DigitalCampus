@@ -42,6 +42,13 @@ public class Student implements Serializable{
         return Math.round(time) / 31536000;
     }
 
+    public static int StudentAge (Date birth) {
+        Date date = new Date();
+        Long time = date.getTime() / 1000 - birth.getTime() / 1000;
+
+        return Math.round(time) / 31536000;
+    }
+
     public void setStudentBirthdate(Date studentBirthdate) {
         this.studentBirthdate = studentBirthdate;
     }

@@ -3,6 +3,7 @@ package com.example.sanfe.digitalcampus.activities.Creators;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,11 +23,14 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import com.example.sanfe.digitalcampus.R;
 import com.example.sanfe.digitalcampus.activities.Managers.ExamManagerActivity;
+import com.example.sanfe.digitalcampus.activities.StartApp.LoginActivity;
 import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.logic.data.Exam;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Subject;
 import com.example.sanfe.digitalcampus.logic.dataManager.SharedPreferencesManager;
+import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -47,6 +51,7 @@ public class EditExamActivity extends AppCompatActivity {
         DateFormat dfDate = new SimpleDateFormat("dd/MM/yyyy");
         final Exam exam;
 
+        final Context context = this;
         final TextView date = (TextView) findViewById(R.id.field_date);
         final TextView time = (TextView) findViewById(R.id.field_time);
         final Spinner degree = (Spinner) findViewById(R.id.field_degree);
@@ -146,20 +151,25 @@ public class EditExamActivity extends AppCompatActivity {
                     cal.set(Calendar.MONTH, Integer.parseInt(aux[1]) - 1);
                     cal.set(Calendar.YEAR, Integer.parseInt(aux[2]));
 
-                    Exam exam1 = new Exam(degree.getSelectedItem().toString(), classroom.getSelectedItem().toString(), cal.getTime(), subject.getSelectedItem().toString());
+                    if (cal.getTime().getTime() > 0)  AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "La fecha y/o la hora no són correctas!");
+                    else {
+                        Exam exam1 = new Exam(degree.getSelectedItem().toString(), classroom.getSelectedItem().toString(), cal.getTime(), subject.getSelectedItem().toString());
 
-                    if (bundle != null) {
-                        int position = (int) bundle.getInt("POSITION");
+                        if (bundle != null) {
+                            int position = (int) bundle.getInt("POSITION");
 
-                        Singleton.getInstance().getExamList().set(position, exam1);
-                        SharedPreferencesManager.updateExamsJSON();
+                            Singleton.getInstance().getExamList().set(position, exam1);
+                            SharedPreferencesManager.updateExamsJSON();
+                        }
+
+                        Intent intent = new Intent (getApplicationContext(), ExamManagerActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
 
-                }catch (Exception e) {}
-
-                Intent intent = new Intent (getApplicationContext(), ExamManagerActivity.class);
-                startActivity(intent);
-                finish();
+                }catch (Exception e) {
+                    AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "La fecha y/o la hora no són correctas!");
+                }
             }
         });
     }

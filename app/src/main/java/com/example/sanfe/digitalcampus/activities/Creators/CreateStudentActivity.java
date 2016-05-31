@@ -3,6 +3,7 @@ package com.example.sanfe.digitalcampus.activities.Creators;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -34,6 +35,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sanfe.digitalcampus.R;
+import com.example.sanfe.digitalcampus.activities.StartApp.LoginActivity;
 import com.example.sanfe.digitalcampus.activities.StartApp.MenuActivity;
 import com.example.sanfe.digitalcampus.activities.Show.ShowStudentActivity;
 import com.example.sanfe.digitalcampus.activities.Managers.StudentManagerActivity;
@@ -41,6 +43,7 @@ import com.example.sanfe.digitalcampus.logic.dataManager.BitmapManager;
 import com.example.sanfe.digitalcampus.logic.dataManager.SharedPreferencesManager;
 import com.example.sanfe.digitalcampus.logic.data.Singleton;
 import com.example.sanfe.digitalcampus.logic.data.Student;
+import com.example.sanfe.digitalcampus.windows.AlertDialogWindow;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -48,8 +51,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-//Controlar data i fer el select foto
-//Vigilar la date
 public class CreateStudentActivity extends AppCompatActivity {
 
     private static int RESULT_LOAD_IMG = 1;
@@ -61,6 +62,7 @@ public class CreateStudentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createstudent);
 
+        final Context context = this;
         final EditText name = (EditText) findViewById(R.id.createstudent_name);
         final TextView date = (TextView) findViewById(R.id.createstudent_birth);
         final Spinner spinner = (Spinner) findViewById(R.id.createstudent_spinner);
@@ -136,31 +138,43 @@ public class CreateStudentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                 Student student = new Student();
-                if (male.isChecked()) {
+                if (!isNameValid(name.getText().toString())) AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "El nombre no es correcto o ya existe!");
+                else {
                     try {
-                        student = new Student(df.parse(date.getText().toString()), spinner.getSelectedItem().toString(),
-                        "Hombre", imgDecodableString, name.getText().toString(), new ArrayList<String>());
-                        Singleton.getInstance().addStudent(student);
-                        SharedPreferencesManager.updateStudentsJSON();
-                        Intent intent = new Intent (getApplicationContext(), ShowStudentActivity.class);
-                        intent.putExtra("STUDENT", student);
-                        startActivity(intent);
-                        finish();
-                    } catch (ParseException e) {}
-                }
-                else if (female.isChecked()){
-                    try {
-                        student = new Student(df.parse(date.getText().toString()), spinner.getSelectedItem().toString(),
-                                "Mujer", imgDecodableString, name.getText().toString(), new ArrayList<String>());
+                        if (Student.StudentAge(df.parse(date.getText().toString())) < 18)  AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "No eres mayor de edad!");
+                        else {
+                            if (male.isChecked()) {
+                                try {
+                                    student = new Student(df.parse(date.getText().toString()), spinner.getSelectedItem().toString(),
+                                            "Hombre", imgDecodableString, name.getText().toString(), new ArrayList<String>());
+                                    Singleton.getInstance().addStudent(student);
+                                    SharedPreferencesManager.updateStudentsJSON();
+                                    Intent intent = new Intent(getApplicationContext(), ShowStudentActivity.class);
+                                    intent.putExtra("STUDENT", student);
+                                    startActivity(intent);
+                                    finish();
+                                } catch (ParseException e) {
+                                }
+                            } else if (female.isChecked()) {
+                                try {
+                                    student = new Student(df.parse(date.getText().toString()), spinner.getSelectedItem().toString(),
+                                            "Mujer", imgDecodableString, name.getText().toString(), new ArrayList<String>());
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+                                Singleton.getInstance().addStudent(student);
+                                SharedPreferencesManager.updateStudentsJSON();
+                                Intent intent = new Intent(getApplicationContext(), ShowStudentActivity.class);
+                                intent.putExtra("STUDENT", student);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "No has seleccionado género!");
+                            }
+                        }
                     } catch (ParseException e) {
-                        e.printStackTrace();
+                        AlertDialogWindow.errorMessage(context, LoginActivity.TITLE, "La fecha no es correcta!");
                     }
-                    Singleton.getInstance().addStudent(student);
-                    SharedPreferencesManager.updateStudentsJSON();
-                    Intent intent = new Intent (getApplicationContext(), ShowStudentActivity.class);
-                    intent.putExtra("STUDENT", student);
-                    startActivity(intent);
-                    finish();
                 }
             }
         });
@@ -175,7 +189,6 @@ public class CreateStudentActivity extends AppCompatActivity {
                             android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
                 } else {
-                    // Permission Denied
                     Toast.makeText(CreateStudentActivity.this, "Permissions Denied", Toast.LENGTH_SHORT)
                             .show();
                 }
@@ -269,5 +282,15 @@ public class CreateStudentActivity extends AppCompatActivity {
     public void onBackPressed() {
         this.startActivity(new Intent(CreateStudentActivity.this, StudentManagerActivity.class));
         finish();
+    }
+
+    public boolean isNameValid (String name) {
+        for (Student student : Singleton.getInstance().getStudentList()) {
+            if (student.getStudentName().equals(name)) {
+                return false;
+            }
+        }
+        if (name.trim().isEmpty()) return false;
+        return true;
     }
 }
