@@ -32,6 +32,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class ShowStudentActivity extends AppCompatActivity {
+//Visualizar imagen, control de null
+    private int from;
 
     //per fer zoom a la imatge
     private Animator mCurrentAnimator;
@@ -42,6 +44,7 @@ public class ShowStudentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showstudent);
+        from = -1;
 
         Intent intent = getIntent();
         final Bundle bundle = intent.getExtras();
@@ -49,7 +52,8 @@ public class ShowStudentActivity extends AppCompatActivity {
         Student studentu = new Student();
 
         if (bundle != null) {
-            studentu = (Student) bundle.get("STUDENT");
+            from = bundle.getInt("FROM");
+            studentu = (Student) bundle.getSerializable("STUDENT");
         }
 
         final Student student = studentu;
@@ -122,8 +126,13 @@ public class ShowStudentActivity extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        this.startActivity(new Intent(ShowStudentActivity.this, StudentManagerActivity.class));
-        finish();
+        if (from == 0) {
+            this.startActivity(new Intent(ShowStudentActivity.this, StudentManagerActivity.class));
+            finish();
+        }
+        else if (from == 1) {
+            finish();
+        }
     }
 
 

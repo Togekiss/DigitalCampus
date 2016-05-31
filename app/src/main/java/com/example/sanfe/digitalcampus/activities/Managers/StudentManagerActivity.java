@@ -52,8 +52,11 @@ public class StudentManagerActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle extras = new Bundle();
                 Intent intent = new Intent(getApplicationContext(), ShowStudentActivity.class);
-                intent.putExtra("STUDENT", list.get(position));
+                extras.putSerializable("STUDENT", list.get(position));
+                extras.putInt("FROM", 0);
+                intent.putExtras(extras);
                 startActivity(intent);
                 finish();
             }

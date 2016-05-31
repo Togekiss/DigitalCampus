@@ -63,7 +63,6 @@ public class StudentListAdapter extends BaseAdapter {
         name.setText(student.getStudentName());
 
         try {
-            //per quan tirem enrere
             if (!CreateSubject2Activity.subject.getSubjectStudents().isEmpty()) {
                 for (Student a : CreateSubject2Activity.subject.getSubjectStudents()) {
                     if (a.getStudentName().equals(student.getStudentName()) && a.getStudentImage() == student.getStudentImage()
